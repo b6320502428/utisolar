@@ -1,0 +1,17 @@
+package service;
+
+import org.springframework.stereotype.Service;
+
+import model.User;
+import repository.UserRepository;
+
+@Service
+public class UserService {
+	UserRepository userRepository;
+	
+	public User getById(int id) {
+		User u = userRepository.findById(id).get();
+		return u;
+	}
+	
+}

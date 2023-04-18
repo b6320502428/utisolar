@@ -1,0 +1,18 @@
+package controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import model.User;
+import service.UserService;
+
+@Controller
+public class UserController {
+	UserService userService;
+	
+	@GetMapping("/User")
+	public User getById(int id) {
+		User u = userService.getById(id);
+		return u;
+	}
+}

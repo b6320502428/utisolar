@@ -1,0 +1,16 @@
+package controller;
+
+import org.springframework.stereotype.Controller;
+
+import model.User;
+import service.UserService;
+
+@Controller
+public class UserController {
+	UserService userService;
+	
+	public User getById(int id) {
+		User u = userService.getById(id);
+		return u;
+	}
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\mine\Desktop\uti-solar\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3235910913.index
+2791055254.index
+3244406425.index
+3233644670.index
+3939824173.index
+3581163120.index

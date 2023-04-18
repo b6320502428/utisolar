@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Apr 17, 2023, 12:50:52 PM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="utisolar" name="backend.model.Report" optimistic-lock="none" table="report">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="backend.model.User" fetch="select" name="user">
+            <column name="uid" not-null="true"/>
+        </many-to-one>
+        <property name="systemProduction" type="double">
+            <column name="systemProduction" not-null="true" precision="22" scale="0"/>
+        </property>
+        <property name="consumption" type="double">
+            <column name="consumption" not-null="true" precision="22" scale="0"/>
+        </property>
+        <property name="selfConsumption" type="double">
+            <column name="selfConsumption" not-null="true" precision="22" scale="0"/>
+        </property>
+        <property name="export" type="double">
+            <column name="export" not-null="true" precision="22" scale="0"/>
+        </property>
+        <property name="import_" type="double">
+            <column name="import" not-null="true" precision="22" scale="0"/>
+        </property>
+        <property name="time" type="timestamp">
+            <column length="19" name="time" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

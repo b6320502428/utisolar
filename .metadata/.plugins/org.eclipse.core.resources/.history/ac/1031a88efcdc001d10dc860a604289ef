@@ -1,0 +1,25 @@
+package backend.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import backend.model.User;
+import backend.repository.UserRepository;
+
+@Service
+public class UserService {
+	
+	@Autowired
+	UserRepository userRepository;
+	
+	public User getById(int id) {
+		User u = userRepository.findById(id).get();
+		return u;
+	}
+
+	public User findByUsername(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
