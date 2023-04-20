@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\mine\Documents\GitHub\utisolar"/>
 			<item value="C:\Users\mine\Desktop\uti-solar\project"/>
 		</list>
 		<list key="projectNameTemplate">

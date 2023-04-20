@@ -21,7 +21,7 @@ public class User implements java.io.Serializable {
 	private Integer id;
 	private String username;
 	private String password;
-	private String token;
+//	private String token;
 	@SuppressWarnings("rawtypes")
 	@JsonIgnore Set reports = new HashSet(0);
 
@@ -63,13 +63,13 @@ public class User implements java.io.Serializable {
 		this.password = password;
 	}
 	
-	public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
+//	public String getToken() {
+//        return token;
+//    }
+//
+//    public void setToken(String token) {
+//        this.token = token;
+//    }
     
 	@SuppressWarnings("rawtypes")
 	public Set getReports() {

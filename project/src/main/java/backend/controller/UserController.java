@@ -44,7 +44,7 @@ public class UserController {
                     .signWith(Keys.hmacShaKeyFor(keyBytes), SignatureAlgorithm.HS512)
                     .compact();
 
-        	existingUser.setToken(token);
+//        	existingUser.setToken(token);
 
             return ResponseEntity.ok(existingUser);
         } else {
