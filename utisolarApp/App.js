@@ -1,3 +1,4 @@
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React, { useState } from 'react';
 import { StyleSheet, View, TextInput, TouchableOpacity, Alert, Text, SafeAreaView } from 'react-native';
 //import { WebView } from 'react-native-webview';
@@ -44,32 +45,34 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.container}>
-        <View style={styles.dataContainer}>
-          <View style={styles.headContainer}>
-            <Text style={styles.textData}>Login</Text>
-            <TextInput
-              placeholder="Username"
-              value={username}
-              onChangeText={setUsername}
-              style={{ backgroundColor: "white", margin: 10, width: '95%', alignSelf: 'center' }}
-            />
-            <TextInput
-              placeholder="Password"
-              value={password}
-              onChangeText={setPassword}
-              secureTextEntry
-              style={{ backgroundColor: "white", margin: 10, width: '95%', alignSelf: 'center' }}
-            />
-            <TouchableOpacity
-              style={styles.button} onPress={handleLogin}>
-              <Text style={styles.textStyle}>Login</Text>
-            </TouchableOpacity>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
+          <View style={styles.dataContainer}>
+            <View style={styles.headContainer}>
+              <Text style={styles.textData}>Login</Text>
+              <TextInput
+                placeholder="Username"
+                value={username}
+                onChangeText={setUsername}
+                style={{ backgroundColor: "white", margin: 10, width: '95%', alignSelf: 'center' }}
+              />
+              <TextInput
+                placeholder="Password"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry
+                style={{ backgroundColor: "white", margin: 10, width: '95%', alignSelf: 'center' }}
+              />
+              <TouchableOpacity
+                style={styles.button} onPress={handleLogin}>
+                <Text style={styles.textStyle}>Login</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
-    </SafeAreaView >
+      </SafeAreaView >
+    </SafeAreaProvider>
   );
 };
 
