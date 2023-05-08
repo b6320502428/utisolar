@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Apr 24, 2023, 9:30:03 AM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="backend.model.TblUsersGroups" optimistic-lock="none" schema="public" table="tbl_users_groups">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="userId" type="int">
+            <column name="user_id" not-null="true" unique="true"/>
+        </property>
+        <property name="groupId" type="int">
+            <column name="group_id" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

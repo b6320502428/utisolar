@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Apr 24, 2023, 9:30:03 AM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="backend.model.TblUsers" optimistic-lock="none" schema="public" table="tbl_users">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="username" type="string">
+            <column length="100" name="username"/>
+        </property>
+        <property name="password" type="string">
+            <column length="255" name="password" not-null="true"/>
+        </property>
+        <property name="email" type="string">
+            <column length="254" name="email"/>
+        </property>
+        <property name="lastLogin" type="java.lang.Integer">
+            <column name="last_login"/>
+        </property>
+        <property name="active" type="java.lang.Integer">
+            <column name="active"/>
+        </property>
+        <property name="firstName" type="string">
+            <column length="50" name="first_name"/>
+        </property>
+        <property name="lastName" type="string">
+            <column length="50" name="last_name"/>
+        </property>
+        <property name="address" type="string">
+            <column length="100" name="address"/>
+        </property>
+        <property name="phone" type="string">
+            <column length="20" name="phone"/>
+        </property>
+        <property name="fex" type="string">
+            <column length="20" name="fex"/>
+        </property>
+        <property name="salt" type="string">
+            <column length="100" name="salt"/>
+        </property>
+    </class>
+</hibernate-mapping>

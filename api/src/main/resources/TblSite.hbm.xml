@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Apr 24, 2023, 9:30:03 AM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="backend.model.TblSite" optimistic-lock="none" schema="public" table="tbl_site">
+        <composite-id class="backend.model.TblSiteId" name="id">
+            <key-property name="address" type="string">
+                <column name="address"/>
+            </key-property>
+            <key-property name="id" type="int">
+                <column name="id"/>
+            </key-property>
+            <key-property name="idSite" type="java.lang.Integer">
+                <column name="id_site"/>
+            </key-property>
+            <key-property name="installed" type="string">
+                <column name="installed"/>
+            </key-property>
+            <key-property name="location" type="string">
+                <column name="location"/>
+            </key-property>
+            <key-property name="peakpower" type="string">
+                <column name="peakpower"/>
+            </key-property>
+            <key-property name="sitename" type="string">
+                <column name="sitename"/>
+            </key-property>
+            <key-property name="status" type="string">
+                <column name="status"/>
+            </key-property>
+            <key-property name="updated" type="string">
+                <column name="updated"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

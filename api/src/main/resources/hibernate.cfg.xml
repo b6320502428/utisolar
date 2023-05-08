@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.password">1q2w3e4r</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://139.5.146.172/postgres</property>
+        <property name="hibernate.connection.username">dbadmin</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        
+        <mapping resource="TblApiKey.hbm.xml"/>
+        <mapping resource="TblBillingType.hbm.xml"/>
+        <mapping resource="TblEnergy.hbm.xml"/>
+        <mapping resource="TblEnergyMonitor.hbm.xml"/>
+        <mapping resource="TblFt.hbm.xml"/>
+        <mapping resource="TblGroups.hbm.xml"/>
+        <mapping resource="TblHoliday.hbm.xml"/>
+        <mapping resource="TblPower.hbm.xml"/>
+        <mapping resource="TblSite.hbm.xml"/>
+        <mapping resource="TblSiteType.hbm.xml"/>
+        <mapping resource="TblUsers.hbm.xml"/>
+        <mapping resource="TblUsersGroups.hbm.xml"/>
+        <mapping resource="TblUsersSite.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

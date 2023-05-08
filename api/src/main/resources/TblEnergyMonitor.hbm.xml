@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Apr 24, 2023, 9:30:03 AM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="backend.model.TblEnergyMonitor" optimistic-lock="none" schema="public" table="tbl_energy_monitor">
+        <composite-id class="backend.model.TblEnergyMonitorId" name="id">
+            <key-property name="beginTime" type="timestamp">
+                <column length="29" name="begin_time"/>
+            </key-property>
+            <key-property name="finalTime" type="timestamp">
+                <column length="29" name="final_time"/>
+            </key-property>
+            <key-property name="id" type="int">
+                <column name="id"/>
+            </key-property>
+            <key-property name="idSite" type="java.lang.Integer">
+                <column name="id_site"/>
+            </key-property>
+            <key-property name="kvardemand" type="java.lang.Double">
+                <column name="kvardemand" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="kwdemand" type="java.lang.Double">
+                <column name="kwdemand" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="kwhCons" type="java.lang.Double">
+                <column name="kwh_cons" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="tod" type="java.lang.Integer">
+                <column name="tod"/>
+            </key-property>
+            <key-property name="tou" type="java.lang.Integer">
+                <column name="tou"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

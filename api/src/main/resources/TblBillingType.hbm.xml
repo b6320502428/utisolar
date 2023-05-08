@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Apr 24, 2023, 9:30:03 AM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="backend.model.TblBillingType" optimistic-lock="none" schema="public" table="tbl_billing_type">
+        <composite-id class="backend.model.TblBillingTypeId" name="id">
+            <key-property name="description" type="string">
+                <column name="description"/>
+            </key-property>
+            <key-property name="energy1" type="java.lang.Double">
+                <column name="energy1" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="energy2" type="java.lang.Double">
+                <column name="energy2" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="energy3" type="java.lang.Double">
+                <column name="energy3" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="energy4" type="java.lang.Double">
+                <column name="energy4" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="energy5" type="java.lang.Double">
+                <column name="energy5" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="energy6" type="java.lang.Double">
+                <column name="energy6" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="energy7" type="java.lang.Double">
+                <column name="energy7" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="energyoffpeak" type="java.lang.Double">
+                <column name="energyoffpeak" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="energyonpeak" type="java.lang.Double">
+                <column name="energyonpeak" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="id" type="int">
+                <column name="id"/>
+            </key-property>
+            <key-property name="kvarcharge" type="java.lang.Double">
+                <column name="kvarcharge" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="onpeakdemand" type="java.lang.Double">
+                <column name="onpeakdemand" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="partialdemand" type="java.lang.Double">
+                <column name="partialdemand" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="peatype" type="string">
+                <column name="peatype"/>
+            </key-property>
+            <key-property name="service" type="java.lang.Double">
+                <column name="service" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="vat" type="java.lang.Double">
+                <column name="vat" precision="17" scale="17"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

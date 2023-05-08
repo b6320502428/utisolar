@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Apr 24, 2023, 9:30:03 AM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="backend.model.TblUsersSite" optimistic-lock="none" schema="public" table="tbl_users_site">
+        <composite-id class="backend.model.TblUsersSiteId" name="id">
+            <key-property name="id" type="int">
+                <column name="id"/>
+            </key-property>
+            <key-property name="idSite" type="java.lang.Integer">
+                <column name="id_site"/>
+            </key-property>
+            <key-property name="idUser" type="java.lang.Integer">
+                <column name="id_user"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

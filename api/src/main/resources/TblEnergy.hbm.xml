@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Apr 24, 2023, 9:30:03 AM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="backend.model.TblEnergy" optimistic-lock="none" schema="public" table="tbl_energy">
+        <composite-id class="backend.model.TblEnergyId" name="id">
+            <key-property name="consumption" type="java.lang.Double">
+                <column name="consumption" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="export" type="java.lang.Double">
+                <column name="export" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="id" type="int">
+                <column name="id"/>
+            </key-property>
+            <key-property name="idSite" type="java.lang.Integer">
+                <column name="id_site"/>
+            </key-property>
+            <key-property name="import_" type="java.lang.Double">
+                <column name="import" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="production" type="java.lang.Double">
+                <column name="production" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="selfconsumption" type="java.lang.Double">
+                <column name="selfconsumption" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="time" type="timestamp">
+                <column length="29" name="time"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

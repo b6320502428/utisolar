@@ -1,194 +1,357 @@
 import { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, Dimensions, ActivityIndicator } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { LineChart } from 'react-native-chart-kit';
-
-const data = [0, 0, 0, 0, 0, 0, 2.7, 9.2, 17.1, 5.4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,];
-
-const horizontalData = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'];
-
-const data2 = {
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-  datasets: [
-    {
-      data: [20, 45, 28, 80, 99, 43],
-      color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`, // Purple
-      strokeWidth: 2 // optional
-    },
-    {
-      data: [99, 80, 28, 45, 20, 43],
-      color: (opacity = 1) => `rgba(255, 0, 0, ${opacity})`, // Red
-      strokeWidth: 2 // optional
-    }
-  ]
-};
+import { LineChart, BarChart } from 'react-native-chart-kit';
 
 export default function Dashboard() {
-  //const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   fetch("http://172.31.48.1:8080/api/user/1", {
-  //     method: 'GET', headers: {
-  //       Accept: 'application/json',
-  //       'Content-Type': 'application/json',
-  //     },
-  //   })
-  //     .then(response => response.json())
-  //     .then(json => setUser(json))
-  //     .catch(error => console.error(error));
-  // }, []);
+  const [site, setSite] = useState({});
+  const [currentPower, setCurrentPower] = useState(0);
+  const [energyToday, setEnergyToday] = useState(0);
+  const [energyThisMonth, setEnergyThisMonth] = useState(0);
+  const [min30day, setMin30day] = useState(0);
+  const [max30day, setMax30day] = useState(0);
+  const [avg30day, setAvg30day] = useState(0);
+  const [hourConToday, setHourConToday] = useState({
+    labels: [],
+    datasets: [],
+  });
+  const [hourSolutionToday, setHourSolutionToday] = useState({
+    labels: [],
+    datasets: [],
+  });
+
+  useEffect(() => {
+    async function fetchSite() {
+      await AsyncStorage.getItem('User')
+        .then((u) => {
+          const user = JSON.parse(u);
+          fetch('http://139.5.146.172:8080/api-1.0/api/tbluserssites/getbyuserid/' + parseInt(user.id), {
+            method: 'GET',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+          })
+            .then(response => response.json())
+            .then((json) => {
+              fetch('http://139.5.146.172:8080/api-1.0/api/tblsites/getbyid/' + parseInt(json.id.idSite), {
+                method: 'GET',
+                headers: {
+                  Accept: 'application/json',
+                  'Content-Type': 'application/json',
+                },
+              })
+                .then(response => response.json())
+                .then((json) => {
+                  setSite(json.id)
+                  fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getcurrentpower/' + parseInt(json.id.idSite), {
+                    method: 'GET',
+                    headers: {
+                      Accept: 'application/json',
+                      'Content-Type': 'application/json',
+                    },
+                  })
+                    .then(response => response.json())
+                    .then((json) => {
+                      setCurrentPower(json / 1000);
+                    })
+                    .catch(error => setCurrentPower(0));
+                  fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getenergytoday/' + parseInt(json.id.idSite), {
+                    method: 'GET',
+                    headers: {
+                      Accept: 'application/json',
+                      'Content-Type': 'application/json',
+                    },
+                  })
+                    .then(response => response.json())
+                    .then((json) => {
+                      setEnergyToday(json / 1000);
+                    })
+                    .catch(error => setEnergyToday(0));
+                  fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getenergythismonth/' + parseInt(json.id.idSite), {
+                    method: 'GET',
+                    headers: {
+                      Accept: 'application/json',
+                      'Content-Type': 'application/json',
+                    },
+                  })
+                    .then(response => response.json())
+                    .then((json) => {
+                      setEnergyThisMonth(json / 1000);
+                    })
+                    .catch(error => setEnergyThisMonth(0));
+                  fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getsolutionthismonth/' + parseInt(json.id.idSite), {
+                    method: 'GET',
+                    headers: {
+                      Accept: 'application/json',
+                      'Content-Type': 'application/json',
+                    },
+                  })
+                    .then(response => response.json())
+                    .then((json) => {
+                      setMin30day(json[0][2] / 1000);
+                      setMax30day(json[0][0] / 1000);
+                      setAvg30day(json[0][1] / 1000);
+                    })
+                    .catch(error => console.error(error));
+                  fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/gethourcontoday/' + parseInt(json.id.idSite), {
+                    method: 'GET',
+                    headers: {
+                      Accept: 'application/json',
+                      'Content-Type': 'application/json',
+                    },
+                  })
+                    .then(response => response.json())
+                    .then((json) => {
+                      if (!(Array.isArray(json) && json.length === 0)) {
+                        setHourConToday({
+                          labels: json.map((_, i) => {
+                            if (i % 2 === 0) {
+                              return `${i + 1}`;
+                            }
+                            return '';
+                          }),
+                          datasets: [
+                            {
+                              data: json.map((item) => item[1] / 1000),
+                            },
+                          ],
+                        });
+                      }
+                    })
+                    .catch(error => console.error(error));
+                  fetch('http://139.5.146.172:8080/api-1.0/api/tblpowers/gethoursolutiontoday/' + parseInt(json.id.idSite), {
+                    method: 'GET',
+                    headers: {
+                      Accept: 'application/json',
+                      'Content-Type': 'application/json',
+                    },
+                  })
+                    .then(response => response.json())
+                    .then((json) => {
+                      if (!(Array.isArray(json) && json.length === 0)) {
+                        setHourSolutionToday({
+                          labels: json.map((_, i) => {
+                            const hours = Math.floor(i * 15 / 60).toString().padStart(2, '0');
+                            const minutes = (i * 15 % 60).toString().padStart(2, '0');
+                            return `${hours}:${minutes}`;
+                          }),
+                          datasets: [
+                            {
+                              data: json.map((item) => item[1] / 1000),
+                              color: (opacity = 1) => `rgba(40, 170, 231, ${opacity})`,
+                              strokeWidth: 2,
+                            },
+                            {
+                              data: json.map((item) => item[2] / 1000),
+                              color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                              strokeWidth: 2,
+                            },
+                            {
+                              data: json.map((item) => item[3] / 1000),
+                              color: (opacity = 1) => `rgba(31, 255, 0, ${opacity})`,
+                              strokeWidth: 2,
+                            },
+                            {
+                              data: json.map((item) => item[4] / 1000),
+                              color: (opacity = 1) => `rgba(255, 189, 0, ${opacity})`,
+                              strokeWidth: 2,
+                            },
+                            {
+                              data: json.map((item) => item[5] / 1000),
+                              color: (opacity = 1) => `rgba(135, 0, 229, ${opacity})`,
+                              strokeWidth: 2,
+                            },
+                          ],
+                        });
+                      }
+                    })
+                    .catch(error => console.error(error));
+                })
+                .catch(error => console.error(error));
+            })
+            .catch(error => console.error(error));
+        });
+    }
+    fetchSite()
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.container}>
         <View style={styles.dataContainer}>
-          <View style={styles.headContainer}>
+          <View style={[styles.headContainer, { backgroundColor: "#2660C5" }]}>
+            <Icon name='solar-panel-large' size={20} color="white" style={{ marginRight: 5, marginLeft: 5 }} />
+            <Text style={{ color: 'white', fontSize: 18 }}>{site !== null ? (
+              <Text style={styles.textData}>{site.sitename}</Text>
+            ) : (
+              <ActivityIndicator />
+            )}</Text>
+          </View>
+          <View style={[styles.headContainer, { backgroundColor: "#2660C5" }]}>
             <Icon name='solar-panel-large' size={20} color="white" style={{ marginRight: 5, marginLeft: 5 }} />
             <Text style={{ color: 'white', fontSize: 18 }}>Overview</Text>
           </View>
           <View style={styles.tableContainerRow}>
             <View style={styles.tableContainerData}>
-              <Text style={{ color: 'white', fontSize: 14 }}>Current Power</Text>
-              <Text style={{ color: 'white', fontSize: 14 }}>0.000 kW</Text>
+              <Text style={{ color: 'black', fontSize: 14 }}>Current Power</Text>
+              <Text style={{ color: 'black', fontSize: 14 }}>{currentPower.toFixed(2)} kW</Text>
             </View>
             <View style={styles.tableContainerData}>
-              <Text style={{ color: 'white', fontSize: 14 }}>Energy Today</Text>
-              <Text style={{ color: 'white', fontSize: 14 }}>34.541 kWh</Text>
+              <Text style={{ color: 'black', fontSize: 14 }}>Energy Today</Text>
+              <Text style={{ color: 'black', fontSize: 14 }}>{energyToday.toFixed(2)} kWh</Text>
             </View>
             <View style={styles.tableContainerData}>
-              <Text style={{ color: 'white', fontSize: 14 }}>Energy This Month</Text>
-              <Text style={{ color: 'white', fontSize: 14 }}>3,434.714 kWh</Text>
+              <Text style={{ color: 'black', fontSize: 14 }}>Energy This Month</Text>
+              <Text style={{ color: 'black', fontSize: 14 }}>{energyThisMonth.toFixed(2)} kWh</Text>
             </View>
           </View>
           <View style={styles.tableContainerRow}>
             <View style={styles.tableContainerData}>
-              <Text style={{ color: 'white', fontSize: 14 }}>30 Day Min</Text>
-              <Text style={{ color: 'white', fontSize: 14 }}>34.541 kWh</Text>
+              <Text style={{ color: 'black', fontSize: 14 }}>30 Day Min</Text>
+              <Text style={{ color: 'black', fontSize: 14 }}>{min30day.toFixed(2)} kWh</Text>
             </View>
             <View style={styles.tableContainerData}>
-              <Text style={{ color: 'white', fontSize: 14 }}>30 Day Average</Text>
-              <Text style={{ color: 'white', fontSize: 14 }}>180.774 kWh</Text>
+              <Text style={{ color: 'black', fontSize: 14 }}>30 Day Average</Text>
+              <Text style={{ color: 'black', fontSize: 14 }}>{avg30day.toFixed(2)} kWh</Text>
             </View>
             <View style={styles.tableContainerData}>
-              <Text style={{ color: 'white', fontSize: 14 }}>30 Day Max</Text>
-              <Text style={{ color: 'white', fontSize: 14 }}>225.29 kWh</Text>
+              <Text style={{ color: 'black', fontSize: 14 }}>30 Day Max</Text>
+              <Text style={{ color: 'black', fontSize: 14 }}>{max30day.toFixed(2)} kWh</Text>
             </View>
           </View>
         </View>
         <View style={styles.dataContainer}>
-          <View style={styles.headContainer}>
+          <View style={[styles.headContainer, { backgroundColor: "#5800BB" }]}>
             <Icon name='solar-panel-large' size={20} color="white" style={{ marginRight: 5, marginLeft: 5 }} />
-            <Text style={{ color: 'white', fontSize: 18 }}>Energy Output</Text>
+            <Text style={{ color: 'white', fontSize: 18 }}>Energy Output (Consumption(kWh))</Text>
           </View>
           <View style={styles.chartContainer}>
-            <LineChart
-              data={{
-                labels: horizontalData,
-                datasets: [
-                  {
-                    data: data
-
-                  }
-                ]
-              }}
-              width={Dimensions.get("window").width - 7}
-              height={300}
-              yAxisSuffix="kW"
-              yAxisInterval={1}
-              chartConfig={{
-                backgroundColor: "black",
-                // backgroundGradientFrom: "#fb8c00",
-                // backgroundGradientTo: "#ffa726",
-                decimalPlaces: 2,
-                color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                style: {
+            {hourConToday.datasets.length > 0 ? (
+              <BarChart
+                data={hourConToday}
+                width={Dimensions.get("window").width - 7}
+                height={220}
+                fromZero={true}
+                yAxisInterval={1}
+                chartConfig={{
+                  backgroundGradientFrom: "#FFFFFF",
+                  backgroundGradientFromOpacity: 1,
+                  backgroundGradientTo: "#FFFFFF",
+                  backgroundGradientToOpacity: 1,
+                  fillShadowGradientFrom: "#2491FF",
+                  fillShadowGradientFromOpacity: 1,
+                  fillShadowGradientTo: "#2491FF",
+                  fillShadowGradientToOpacity: 1,
+                  decimalPlaces: 2,
+                  color: (opacity = 1) => `rgba(36, 145, 255, ${opacity})`,
+                  labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                  style: {
+                    borderRadius: 10,
+                  },
+                  barPercentage: 0.3,
+                }}
+                style={{
+                  marginTop: 5,
                   borderRadius: 16,
-                },
-                propsForDots: {
-                  r: "4",
-                  strokeWidth: "1",
-                  stroke: "white"
-                }
-
-              }}
-              bezier
-              style={{
-                marginTop: 4,
-                marginBottom: 4,
-                marginRight: 7,
-                borderRadius: 16
-              }}
-            />
+                }}
+              />
+            ) : (
+              <Text style={{ color: 'black', fontSize: 20, alignSelf: 'center' }}>ไม่มีข้อมูล</Text>
+            )}
           </View>
         </View>
         <View style={styles.dataContainer}>
-          <View style={styles.headContainer}>
+          <View style={[styles.headContainer, { backgroundColor: "#E92CE6" }]}>
             <Icon name='solar-panel-large' size={20} color="white" style={{ marginRight: 5, marginLeft: 5 }} />
             <Text style={{ color: 'white', fontSize: 18 }}>Production & Consume (kW)</Text>
           </View>
           <View style={styles.chartContainer}>
-            <LineChart
-              data={data2}
-              width={Dimensions.get("window").width - 7}
-              height={300}
-              yAxisInterval={1}
-              chartConfig={{
-                backgroundColor: "black",
-                // backgroundGradientFrom: "#fb8c00",
-                // backgroundGradientTo: "#ffa726",
-                decimalPlaces: 2,
-                color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                style: {
-                  borderRadius: 16,
-                },
-                propsForDots: {
-                  r: "0",
-                  strokeWidth: "1",
-                  stroke: "white"
-                }
+            {hourSolutionToday.datasets.length > 0 ? (
+              <View>
+                <LineChart
+                  verticalLabelRotation={90}
+                  data={hourSolutionToday}
+                  width={Dimensions.get("window").width}
+                  height={330}
+                  yAxisInterval={2}
+                  xAxisInterval={2}
+                  fromZero={true}
+                  chartConfig={{
+                    fillShadowGradientFrom: "#FFFFFF",
+                    fillShadowGradientFromOpacity: 0,
+                    fillShadowGradientTo: "#FFFFFF",
+                    fillShadowGradientToOpacity: 0,
+                    backgroundGradientFrom: "#FFFFFF",
+                    backgroundGradientFromOpacity: 1,
+                    backgroundGradientTo: "#FFFFFF",
+                    backgroundGradientToOpacity: 1,
+                    decimalPlaces: 2,
+                    color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                    labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                    style: {
+                      borderRadius: 16,
+                    },
+                    propsForDots: {
+                      r: "0",
+                      strokeWidth: "1",
+                      stroke: "#000000",
+                    },
+                  }}
+                  bezier
+                  formatXLabel={(value) => value.includes(':00') ? value : ''}
+                  style={{
+                    borderRadius: 10,
+                  }}
+                />
+                <View style={[styles.legendContainer]}>
+                  <View style={[styles.legendContainer]}>
+                    <Text style={[styles.legendText, { color: 'rgb(40, 170, 231)' }]}>Consumption</Text>
+                  </View>
+                  <View style={[styles.legendContainer]}>
+                    <Text style={[styles.legendText, { color: 'rgb(0, 0, 0)' }]}>Feedin</Text>
+                  </View>
+                  <View style={[styles.legendContainer]}>
+                    <Text style={[styles.legendText, { color: 'rgb(31, 255, 0)' }]}>Production</Text>
+                  </View>
+                </View>
+                <View style={styles.legendContainer}>
+                  <View style={[styles.legendContainer]}>
+                    <Text style={[styles.legendText, { color: 'rgb(255, 189, 0)' }]}>Purchesed</Text>
+                  </View>
+                  <View style={[styles.legendContainer]}>
+                    <Text style={[styles.legendText, { color: 'rgb(135, 0, 229)' }]}>selfConsumption</Text>
+                  </View>
+                </View>
+              </View>
+            ) : (
+              <Text style={{ color: 'black', fontSize: 20, alignSelf: 'center' }}>ไม่มีข้อมูล</Text>
+            )}
 
-              }}
-              bezier
-              style={{
-                marginTop: 4,
-                marginBottom: 4,
-                marginRight: 7,
-                borderRadius: 16
-              }}
-            />
           </View>
         </View>
         <View style={styles.dataContainer}>
           <View style={styles.headContainer}>
-            <Icon name='molecule-co2' size={30} color="white" style={{ marginRight: 5, marginLeft: 5 }} />
-            <Text style={{ color: 'white', fontSize: 20 }}>ค่า CO2E : 1,346.41 kg</Text>
+            <Icon name='molecule-co2' size={30} color="black" style={{ marginRight: 5, marginLeft: 5 }} />
+            <Text style={{ color: 'black', fontSize: 20 }}>ค่า CO2E : {(energyThisMonth * 0.392).toFixed(2)} kg</Text>
           </View>
         </View>
         <View style={styles.dataContainer}>
           <View style={styles.headContainer}>
-            <Icon name='dolly' size={30} color="white" style={{ marginRight: 5, marginLeft: 5 }} />
-            <Text style={{ color: 'white', fontSize: 20 }}>ลดค่าใช้จ่าย : 0.000 บาท</Text>
+            <Icon name='dolly' size={30} color="black" style={{ marginRight: 5, marginLeft: 5 }} />
+            <Text style={{ color: 'black', fontSize: 20 }}>ลดค่าใช้จ่าย : 0.000 บาท</Text>
           </View>
         </View>
         <View style={styles.dataContainer}>
           <View style={styles.headContainer}>
-            <Icon name='tree' size={30} color="white" style={{ marginRight: 5, marginLeft: 5 }} />
-            <Text style={{ color: 'white', fontSize: 20 }}>ลดการตัดต้นไม้ : 40.19 ต้น</Text>
+            <Icon name='tree' size={30} color="black" style={{ marginRight: 5, marginLeft: 5 }} />
+            <Text style={{ color: 'black', fontSize: 20 }}>ลดการตัดต้นไม้ : {(energyThisMonth * 0.0117).toFixed(2)} ต้น</Text>
           </View>
         </View>
       </ScrollView>
     </SafeAreaView>
-
-    /* {user && (
-      <View>
-        <Text>{user.username}</Text>
-        <Text>{user.password}</Text>
-      </View>
-    )}
-    <StatusBar style="auto" /> */
-
   );
 }
 
@@ -196,31 +359,28 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    backgroundColor: '#fff',
-
+    backgroundColor: '#E5E5E5'
   },
   dataContainer: {
     flex: 1,
-    width: '98%',
+    width: '100%',
     borderRadius: 8,
     marginTop: 5,
-    backgroundColor: "black",
+    backgroundColor: "white",
     alignSelf: 'center'
   },
   chartContainer: {
     flex: 1,
-    width: '98%',
+    width: '100%',
     borderRadius: 8,
-    // margin: 5,
-    backgroundColor: "black",
+    backgroundColor: 'white',
     alignSelf: 'center'
   },
   headContainer: {
     flex: 1,
-    width: '98%',
+    width: '100%',
     borderRadius: 8,
     marginTop: 2,
-    backgroundColor: "black",
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'center'
@@ -229,17 +389,17 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     alignSelf: 'center',
-    borderBottomWidth: 1,
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
-    borderBottomColor: 'gray',
-    borderLeftColor: 'gray',
-    borderRightColor: 'gray',
-    paddingBottom: 5,
-
+    paddingBottom: 5
   },
   tableContainerRow: {
+    flexDirection: 'row'
+  },
+  legendContainer: {
+    flex: 1,
     flexDirection: 'row',
-
+    justifyContent: 'center',
+  },
+  legendText: {
+    fontSize: 10,
   },
 });

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Apr 24, 2023, 9:30:03 AM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="backend.model.TblHoliday" optimistic-lock="none" schema="public" table="tbl_holiday">
+        <composite-id class="backend.model.TblHolidayId" name="id">
+            <key-property name="holidayDate" type="date">
+                <column length="13" name="holiday_date"/>
+            </key-property>
+            <key-property name="holidayDesc" type="string">
+                <column name="holiday_desc"/>
+            </key-property>
+            <key-property name="id" type="int">
+                <column name="id"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

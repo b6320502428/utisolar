@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Apr 24, 2023, 9:30:03 AM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="backend.model.TblFt" optimistic-lock="none" schema="public" table="tbl_ft">
+        <composite-id class="backend.model.TblFtId" name="id">
+            <key-property name="id" type="int">
+                <column name="id"/>
+            </key-property>
+            <key-property name="rate" type="java.lang.Double">
+                <column name="rate" precision="17" scale="17"/>
+            </key-property>
+            <key-property name="time" type="date">
+                <column length="13" name="time"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>
