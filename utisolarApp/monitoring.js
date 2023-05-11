@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Dimensions, ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Entypo } from '@expo/vector-icons';
+import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Picker } from '@react-native-picker/picker';
 import DatePicker from 'react-native-modern-datepicker';
 import * as Progress from 'react-native-progress';
-import { LineChart, BarChart } from 'react-native-chart-kit';
+import { LineChart } from 'react-native-chart-kit';
 
 export default function Monitoring() {
 
@@ -13,12 +13,14 @@ export default function Monitoring() {
     const currentDate = new Date();
     const formattedDate = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1).toString().padStart(2, '0') + '-' + currentDate.getDate().toString().padStart(2, '0');
     const [selectedDate, setSelectedDate] = useState(formattedDate);
+    const formattedDate2 = currentDate.getDate().toString().padStart(2, '0') + '-' + (currentDate.getMonth() + 1).toString().padStart(2, '0') + '-' + currentDate.getFullYear();
+    const [displayDate, setDisplayDate] = useState(formattedDate2);
     const [selectedValue, setSelectedValue] = useState('1');
     const [chartData, setChartData] = useState({
         labels: [],
         datasets: [],
     });
-    const [monitoringDate, setMonitoringDate] = useState(formattedDate);
+    const [monitoringDate, setMonitoringDate] = useState(formattedDate2);
     const [monitoringType, setMonitoringType] = useState('1');
 
     const [sumConsumption, setSumConsumption] = useState(0);
@@ -29,26 +31,31 @@ export default function Monitoring() {
     const [percentExport, setPercentExport] = useState(0);
     const [percentImport, setPercentImport] = useState(0);
     const [isHidden, setIsHidden] = useState(true);
+    const [showLine1, setShowLine1] = useState(true);
+    const [showLine2, setShowLine2] = useState(true);
+    const [showLine3, setShowLine3] = useState(true);
 
-    const data = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May"],
-        datasets: [
-            {
-                data: [20, 45, 28, 80, 99],
-                color: (opacity = 1) => `rgba(0, 0, 255, ${opacity})`,
-                strokeWidth: 2,
-            },
-            {
-                data: [50, 70, 80, 60, 45],
-                color: (opacity = 1) => `rgba(255, 0, 0, ${opacity})`,
-                strokeWidth: 2,
-            },
-            {
-                data: [30, 25, 52, 45, 70],
-                color: (opacity = 1) => `rgba(0, 255, 0, ${opacity})`,
-                strokeWidth: 2,
-            },
-        ],
+    const updateData = () => {
+        return {
+            labels: chartData.labels,
+            datasets: [
+                {
+                    data: chartData.datasets[0].data,
+                    color: showLine1 ? chartData.datasets[0].color : () => 'transparent',
+                    strokeWidth: 2,
+                },
+                {
+                    data: chartData.datasets[1].data,
+                    color: showLine2 ? chartData.datasets[1].color : () => 'transparent',
+                    strokeWidth: 2,
+                },
+                {
+                    data: chartData.datasets[2].data,
+                    color: showLine3 ? chartData.datasets[2].color : () => 'transparent',
+                    strokeWidth: 2,
+                }
+            ],
+        };
     };
 
     const handleSelectDate = () => {
@@ -142,6 +149,68 @@ export default function Monitoring() {
                                     const date = new Date(selectedDate);
                                     date.setDate(date.getDate() + i);
                                     const day = date.toISOString().slice(0, 10);
+                                    const parts = day.split('-');
+                                    const newDateStr = `${parts[2]}-${parts[1]}-${parts[0]}`;
+                                    return `${newDateStr}`;
+                                }
+                                return '';
+                            }),
+                            datasets: [
+                                {
+                                    data: json.map((item) => item[2] / 1000),
+                                    color: (opacity = 1) => `rgba(44, 193, 0, ${opacity})`,
+                                    strokeWidth: 2,
+                                },
+                                {
+                                    data: json.map((item) => item[3] / 1000),
+                                    color: (opacity = 1) => `rgba(40, 170, 231, ${opacity})`,
+                                    strokeWidth: 2,
+                                },
+                                {
+                                    data: json.map((item) => item[1] / 1000),
+                                    color: (opacity = 1) => `rgba(255, 0, 0, ${opacity})`,
+                                    strokeWidth: 2,
+                                },
+                            ]
+                        });
+                    }
+                    else if (command === "getsumeachmonthbyyear") {
+                        setChartData({
+                            labels: json.map((item, i) => {
+                                if (i % 2 === 0) {
+                                    const date = new Date(item[0]);
+                                    date.setMonth(date.getMonth());
+                                    const month = date.toLocaleString('default', { month: 'long' });
+                                    return `${month}`;
+                                }
+                                return '';
+                            }),
+                            datasets: [
+                                {
+                                    data: json.map((item) => item[2] / 1000),
+                                    color: (opacity = 1) => `rgba(44, 193, 0, ${opacity})`,
+                                    strokeWidth: 2,
+                                },
+                                {
+                                    data: json.map((item) => item[3] / 1000),
+                                    color: (opacity = 1) => `rgba(40, 170, 231, ${opacity})`,
+                                    strokeWidth: 2,
+                                },
+                                {
+                                    data: json.map((item) => item[1] / 1000),
+                                    color: (opacity = 1) => `rgba(255, 0, 0, ${opacity})`,
+                                    strokeWidth: 2,
+                                },
+                            ]
+                        });
+                    }
+                    else if (command === "getsumeachdaybymonth") {
+                        setChartData({
+                            labels: json.map((item, i) => {
+                                if (i % 2 === 0) {
+                                    const date = new Date(item[0]);
+                                    date.setDate(date.getDate());
+                                    const day = date.getDate();
                                     return `${day}`;
                                 }
                                 return '';
@@ -193,6 +262,9 @@ export default function Monitoring() {
                         });
                     }
                     SumData(json)
+                    const parts = selectedDate.split('-');
+                    const newDateStr = `${parts[2]}-${parts[1]}-${parts[0]}`;
+                    setMonitoringDate(newDateStr)
                 }
                 else {
                     setChartData({
@@ -200,10 +272,12 @@ export default function Monitoring() {
                         datasets: []
                     });
                     SumData(0)
+                    const parts = selectedDate.split('-');
+                    const newDateStr = `${parts[2]}-${parts[1]}-${parts[0]}`;
+                    setMonitoringDate(newDateStr)
                 }
             })
             .catch(error => console.error(error));
-        setMonitoringDate(selectedDate)
         setMonitoringType(selectedValue)
         setIsHidden(true)
     }
@@ -311,6 +385,9 @@ export default function Monitoring() {
                             setIsHidden(true)
                         }
                         setSelectedDate(newDate);
+                        const parts = newDate.split('-');
+                        const newDateStr = `${parts[2]}-${parts[1]}-${parts[0]}`;
+                        setDisplayDate(newDateStr)
                     }}
                     options={{
                         backgroundColor: '#E5E5E5',
@@ -331,7 +408,7 @@ export default function Monitoring() {
             <ScrollView style={styles.container}>
                 <View style={styles.dataContainer}>
                     <View style={styles.headContainer}>
-                        <Entypo name="clipboard" size={22} color="white" />
+                        <AntDesign name="dashboard" size={20} color="white" style={{ marginRight: 5, marginLeft: 5 }}/>
                         <Text style={{ color: 'white', fontSize: 20 }}>Board
                             {site !== null ? (
                                 <Text style={styles.textData}> ({site.sitename})</Text>
@@ -341,7 +418,7 @@ export default function Monitoring() {
                     </View>
                     <SelectOptions />
                     <TouchableOpacity style={styles.button} onPress={handleSelectDate}>
-                        <Text style={styles.buttonText}>Select Date ({selectedDate})</Text>
+                        <Text style={styles.buttonText}>Select Date ({displayDate})</Text>
                     </TouchableOpacity>
                     {!isHidden && (
                         <BasicUsage />
@@ -349,11 +426,11 @@ export default function Monitoring() {
                     <TouchableOpacity style={styles.button} onPress={handleSubmit}>
                         <Text style={styles.buttonText}>Submit</Text>
                     </TouchableOpacity>
-                    <Text style={{ color: 'black', fontSize: 18, alignSelf:'center' }}>Monitoring On {monitoringDate} As
-                        {monitoringType === '1' && ' Day'}
-                        {monitoringType === '2' && ' Week'}
-                        {monitoringType === '3' && ' Month'}
-                        {monitoringType === '4' && ' Year'}
+                    <Text style={{ color: 'black', fontSize: 18, alignSelf: 'center' }}>Monitoring On {monitoringDate} 
+                        {monitoringType === '1' && ' Daily'}
+                        {monitoringType === '2' && ' Weekly'}
+                        {monitoringType === '3' && ' Monthly'}
+                        {monitoringType === '4' && ' Yearly'}
                         {!['1', '2', '3', '4'].includes(monitoringType) && ' Day'}</Text>
                     <View style={styles.solutionContainer}>
                         <View style={styles.inContainer}>
@@ -397,12 +474,15 @@ export default function Monitoring() {
                     <View style={styles.chartContainer}>
                         {chartData.datasets.length > 0 ? (
                             <View>
+                                <View style={styles.headContainer}>
+                                <MaterialCommunityIcons name='chart-bell-curve' size={20} color="white" style={{ marginRight: 5, marginLeft: 5 }} />
+                                    <Text style={{ color: 'white', fontSize: 20 }}>Summarize (kWh)</Text>
+                                </View>
                                 <LineChart
-                                    data={chartData}
+                                    data={updateData()}
                                     width={Dimensions.get("window").width - 7}
                                     height={220}
-                                    yAxisInterval={2}
-                                    xAxisInterval={2}
+                                    yAxisInterval={100}
                                     fromZero={true}
                                     chartConfig={{
                                         fillShadowGradientFrom: "#FFFFFF",
@@ -420,7 +500,7 @@ export default function Monitoring() {
                                             borderRadius: 16,
                                         },
                                         propsForDots: {
-                                            r: "1",
+                                            r: "0",
                                             strokeWidth: "1",
                                             stroke: "black",
                                         },
@@ -435,13 +515,22 @@ export default function Monitoring() {
                                 />
                                 <View style={[styles.legendContainer]}>
                                     <View style={[styles.legendContainer]}>
-                                        <Text style={[styles.legendText, { color: 'rgb(44, 193, 0)' }]}>System Production</Text>
+                                        <TouchableOpacity activeOpacity={1} style={[styles.legendContainer, { opacity: showLine1 ? 1 : 0.1 }]} onPress={() => setShowLine1(!showLine1)}>
+                                            <View style={{ backgroundColor: 'rgb(44, 193, 0)', width: 14, height: 14, alignSelf: 'center' }}></View>
+                                            <Text style={[styles.legendText, { color: 'rgb(44, 193, 0)' }]}> System Production</Text>
+                                        </TouchableOpacity>
                                     </View>
                                     <View style={[styles.legendContainer]}>
-                                        <Text style={[styles.legendText, { color: 'rgb(40, 170, 231)' }]}>Self-consumption</Text>
+                                        <TouchableOpacity activeOpacity={1} style={[styles.legendContainer, { opacity: showLine2 ? 1 : 0.1 }]} onPress={() => setShowLine2(!showLine2)}>
+                                            <View style={{ backgroundColor: 'rgb(40, 170, 231)', width: 14, height: 14, alignSelf: 'center' }}></View>
+                                            <Text style={[styles.legendText, { color: 'rgb(40, 170, 231)' }]}> Self-consumption</Text>
+                                        </TouchableOpacity>
                                     </View>
                                     <View style={[styles.legendContainer]}>
-                                        <Text style={[styles.legendText, { color: 'rgb(255, 0, 0)' }]}>Consumption</Text>
+                                        <TouchableOpacity activeOpacity={1} style={[styles.legendContainer, { opacity: showLine3 ? 1 : 0.1 }]} onPress={() => setShowLine3(!showLine3)}>
+                                            <View style={{ backgroundColor: 'rgb(255, 0, 0)', width: 14, height: 14, alignSelf: 'center' }}></View>
+                                            <Text style={[styles.legendText, { color: 'rgb(255, 0, 0)' }]}> Consumption</Text>
+                                        </TouchableOpacity>
                                     </View>
                                 </View>
                             </View>
@@ -449,6 +538,7 @@ export default function Monitoring() {
                             <Text style={{ color: 'black', fontSize: 20, alignSelf: 'center' }}>ไม่พบข้อมูล</Text>
                         )}
                     </View>
+                    <Text style={{ color: 'white', fontSize: 20, alignSelf: 'center' }}>...</Text>
                 </View>
 
             </ScrollView>
@@ -576,6 +666,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     legendText: {
-        fontSize: 10,
+        fontSize: 12,
     },
 });
