@@ -241,29 +241,29 @@ export default function Dashboard() {
           <View style={styles.tableContainerRow}>
             <View style={styles.tableContainerData}>
               <Text style={{ color: 'black', fontSize: 14, fontWeight: 'bold' }}>Current Power</Text>
-              <Text style={{ color: '#3f51b5', fontSize: 14 }}>{currentPower.toFixed(2)} kW</Text>
+              <Text style={{ color: '#3f51b5', fontSize: 14 }}>{currentPower.toFixed(3)} kW</Text>
             </View>
             <View style={styles.tableContainerData}>
               <Text style={{ color: 'black', fontSize: 14, fontWeight: 'bold' }}>Energy Today</Text>
-              <Text style={{ color: '#3f51b5', fontSize: 14 }}>{energyToday.toFixed(2)} kWh</Text>
+              <Text style={{ color: '#3f51b5', fontSize: 14 }}>{energyToday.toFixed(3)} kWh</Text>
             </View>
             <View style={styles.tableContainerData}>
               <Text style={{ color: 'black', fontSize: 14, fontWeight: 'bold' }}>Energy This Month</Text>
-              <Text style={{ color: '#3f51b5', fontSize: 14 }}>{energyThisMonth.toFixed(2)} kWh</Text>
+              <Text style={{ color: '#3f51b5', fontSize: 14 }}>{energyThisMonth.toFixed(3)} kWh</Text>
             </View>
           </View>
           <View style={styles.tableContainerRow}>
             <View style={styles.tableContainerData}>
               <Text style={{ color: 'black', fontSize: 14, fontWeight: 'bold' }}>30 Day Min</Text>
-              <Text style={{ color: '#3f51b5', fontSize: 14 }}>{min30day.toFixed(2)} kWh</Text>
+              <Text style={{ color: '#3f51b5', fontSize: 14 }}>{min30day.toFixed(3)} kWh</Text>
             </View>
             <View style={styles.tableContainerData}>
               <Text style={{ color: 'black', fontSize: 14, fontWeight: 'bold' }}>30 Day Average</Text>
-              <Text style={{ color: '#3f51b5', fontSize: 14 }}>{avg30day.toFixed(2)} kWh</Text>
+              <Text style={{ color: '#3f51b5', fontSize: 14 }}>{avg30day.toFixed(3)} kWh</Text>
             </View>
             <View style={styles.tableContainerData}>
               <Text style={{ color: 'black', fontSize: 14, fontWeight: 'bold' }}>30 Day Max</Text>
-              <Text style={{ color: '#3f51b5', fontSize: 14 }}>{max30day.toFixed(2)} kWh</Text>
+              <Text style={{ color: '#3f51b5', fontSize: 14 }}>{max30day.toFixed(3)} kWh</Text>
             </View>
           </View>
         </View>
