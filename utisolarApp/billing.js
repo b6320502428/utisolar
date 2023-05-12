@@ -140,7 +140,7 @@ export default function Billing() {
                                             })
                                             .catch(error => setMaxOnPeak2(0));
                                         if (json.id.peatype === "1112" || json.id.peatype === "1122" || json.id.peatype === "2112" || json.id.peatype === "2122") {
-                                            fetch('http://139.5.146.172:8080/api-1.0/api/tblenergys/getsummonth/' + newDate2 + '/' + parseInt(site.idSite), {
+                                            fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getsummonth/' + newDate2 + '/' + parseInt(site.idSite), {
                                                 method: 'GET',
                                                 headers: {
                                                     Accept: 'application/json',
@@ -178,7 +178,7 @@ export default function Billing() {
                                                     setMaxOffPeak2(json / 1000)
                                                 })
                                                 .catch(error => setMaxOffPeak2(0));
-                                            fetch('http://139.5.146.172:8080/api-1.0/api/tblenergys/getsumonpeak/' + newDate2 + '/' + parseInt(site.idSite), {
+                                            fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getsumonpeak/' + newDate2 + '/' + parseInt(site.idSite), {
                                                 method: 'GET',
                                                 headers: {
                                                     Accept: 'application/json',
@@ -190,7 +190,7 @@ export default function Billing() {
                                                     setSumOnPeak(json / 1000)
                                                 })
                                                 .catch(error => setSumOnPeak(0));
-                                            fetch('http://139.5.146.172:8080/api-1.0/api/tblenergys/getsumoffpeak1/' + newDate2 + '/' + parseInt(site.idSite), {
+                                            fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getsumoffpeak1/' + newDate2 + '/' + parseInt(site.idSite), {
                                                 method: 'GET',
                                                 headers: {
                                                     Accept: 'application/json',
@@ -202,7 +202,7 @@ export default function Billing() {
                                                     setSumOffPeak1(json / 1000)
                                                 })
                                                 .catch(error => setSumOffPeak1(0));
-                                            fetch('http://139.5.146.172:8080/api-1.0/api/tblenergys/getsumoffpeak2/' + newDate2 + '/' + parseInt(site.idSite), {
+                                            fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getsumoffpeak2/' + newDate2 + '/' + parseInt(site.idSite), {
                                                 method: 'GET',
                                                 headers: {
                                                     Accept: 'application/json',

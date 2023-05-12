@@ -73,4 +73,24 @@ public class TblEnergyMonitorController {
 		return tblEnergyMonitorService.getMaxOnPeak2(day,site);
 	}
 	
+	@GetMapping("/tblenergymonitors/getsummonth/{day}/{site}")
+	public Double getSumMonth(@PathVariable("day") String day,@PathVariable("site") int site) {
+		return tblEnergyMonitorService.getSumMonth(day,site);
+	}
+	
+	@GetMapping("/tblenergymonitors/getsumonpeak/{day}/{site}")
+	public Double getOnPeak(@PathVariable("day") String day,@PathVariable("site") int site) {
+		return tblEnergyMonitorService.getOnPeak(day,site);
+	}
+	
+	@GetMapping("/tblenergymonitors/getsumoffpeak1/{day}/{site}")
+	public Double getOffPeak1(@PathVariable("day") String day,@PathVariable("site") int site) {
+		return tblEnergyMonitorService.getOffPeak1(day,site);
+	}
+	
+	@GetMapping("/tblenergymonitors/getsumoffpeak2/{day}/{site}")
+	public Double getOffPeak2(@PathVariable("day") String day,@PathVariable("site") int site) {
+		return tblEnergyMonitorService.getOffPeak2(day,site);
+	}
+	
 }

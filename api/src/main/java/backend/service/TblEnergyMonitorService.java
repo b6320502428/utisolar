@@ -81,4 +81,20 @@ public class TblEnergyMonitorService {
 	public Double getMaxOnPeak2(String day,int site) {
 		return tblEnergyMonitorRepository.getMaxOnPeak2(day,site);
 	}
+	
+	public Double getSumMonth(String day, int site) {
+		return tblEnergyMonitorRepository.getSumMonth(day, site);
+	}
+	
+	public Double getOnPeak(String day, int site) {
+		return tblEnergyMonitorRepository.getOnPeak(day, site);
+	}
+
+	public Double getOffPeak1(String day, int site) {
+		return tblEnergyMonitorRepository.getOffPeak1(day, site);
+	}
+
+	public Double getOffPeak2(String day, int site) {
+		return tblEnergyMonitorRepository.getOffPeak2(day, site);
+	}
 }
