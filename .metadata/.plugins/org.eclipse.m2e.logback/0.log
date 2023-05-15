@@ -5217,3 +5217,490 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact io.jsonwebtok
 2566-05-08 12:07:34,075 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2566-05-08 12:07:34,075 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2566-05-08 12:07:34,075 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-08 15:49:54,331 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-08 16:49:13,747 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-08 16:49:13,747 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-08 16:49:13,751 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-08 16:49:13,788 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-08 16:49:13,806 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-08 16:49:13,806 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-08 16:49:13,806 [Worker-42: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-08 17:46:40,074 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-08 17:49:37,942 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-08 17:54:55,156 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-09 07:54:26,412 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-09 07:58:07,167 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-09 07:58:07,170 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-09 07:58:07,183 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-09 07:58:07,244 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-09 07:58:07,292 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-09 07:58:07,292 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-09 07:58:07,292 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-09 13:23:08,092 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2566-05-09 13:30:04,323 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-09 13:30:04,324 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-09 13:30:04,331 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-09 13:30:04,359 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-09 13:30:04,371 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-09 13:30:04,371 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-09 13:30:04,372 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-09 13:37:32,134 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-09 13:37:32,134 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-09 13:37:32,137 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-09 13:37:32,151 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-09 13:37:32,167 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-09 13:37:32,167 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-09 13:37:32,167 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-09 13:38:00,425 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-09 13:38:00,425 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-09 13:38:00,427 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-09 13:38:00,434 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-09 13:38:00,439 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-09 13:38:00,439 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-09 13:38:00,439 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-09 13:38:48,495 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2566-05-09 13:38:56,821 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149 [606])
+2566-05-09 13:38:56,828 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149
+2566-05-09 13:38:56,829 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\aether-connector-okhttp-0.17.8.jar
+2566-05-09 13:38:56,829 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\commons-cli-1.4.jar
+2566-05-09 13:38:56,830 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\commons-io-2.6.jar
+2566-05-09 13:38:56,830 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\commons-lang3-3.8.1.jar
+2566-05-09 13:38:56,830 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\guice-4.2.2-no_aop.jar
+2566-05-09 13:38:56,830 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\jansi-2.4.0.jar
+2566-05-09 13:38:56,830 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-artifact-3.8.6.jar
+2566-05-09 13:38:56,830 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-builder-support-3.8.6.jar
+2566-05-09 13:38:56,831 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-compat-3.8.6.jar
+2566-05-09 13:38:56,831 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-core-3.8.6.jar
+2566-05-09 13:38:56,831 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-embedder-3.8.6.jar
+2566-05-09 13:38:56,831 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-model-3.8.6.jar
+2566-05-09 13:38:56,831 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-model-builder-3.8.6.jar
+2566-05-09 13:38:56,831 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-plugin-api-3.8.6.jar
+2566-05-09 13:38:56,831 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-repository-metadata-3.8.6.jar
+2566-05-09 13:38:56,832 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-resolver-api-1.6.3.jar
+2566-05-09 13:38:56,832 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-resolver-connector-basic-1.6.3.jar
+2566-05-09 13:38:56,832 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-resolver-impl-1.6.3.jar
+2566-05-09 13:38:56,832 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-resolver-provider-3.8.6.jar
+2566-05-09 13:38:56,832 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-resolver-spi-1.6.3.jar
+2566-05-09 13:38:56,832 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-resolver-transport-wagon-1.6.3.jar
+2566-05-09 13:38:56,832 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-resolver-util-1.6.3.jar
+2566-05-09 13:38:56,832 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-settings-3.8.6.jar
+2566-05-09 13:38:56,832 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-settings-builder-3.8.6.jar
+2566-05-09 13:38:56,833 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\maven-shared-utils-3.3.4.jar
+2566-05-09 13:38:56,833 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\okhttp-3.14.1.jar
+2566-05-09 13:38:56,833 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\okio-1.17.3.jar
+2566-05-09 13:38:56,833 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\org.eclipse.sisu.inject-0.3.5.jar
+2566-05-09 13:38:56,833 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\org.eclipse.sisu.plexus-0.3.5.jar
+2566-05-09 13:38:56,833 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\plexus-build-api-0.0.7.jar
+2566-05-09 13:38:56,834 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\plexus-cipher-2.0.jar
+2566-05-09 13:38:56,834 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\plexus-classworlds-2.6.0.jar
+2566-05-09 13:38:56,834 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\plexus-component-annotations-2.1.0.jar
+2566-05-09 13:38:56,834 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\plexus-interpolation-1.26.jar
+2566-05-09 13:38:56,834 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\plexus-sec-dispatcher-2.0.jar
+2566-05-09 13:38:56,834 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\plexus-utils-3.3.1.jar
+2566-05-09 13:38:56,835 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\wagon-file-3.5.1.jar
+2566-05-09 13:38:56,835 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.604.20221130-2149\jars\wagon-provider-api-3.5.1.jar
+2566-05-09 13:38:56,836 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava_30.1.0.v20221112-0806 [10])
+2566-05-09 13:38:56,838 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\com.google.guava_30.1.0.v20221112-0806.jar
+2566-05-09 13:38:56,838 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=slf4j.api_1.7.36 [918])
+2566-05-09 13:38:56,839 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\slf4j.api_1.7.36.jar
+2566-05-09 13:38:56,840 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=javax.inject_1.0.0.v20220405-0441 [32])
+2566-05-09 13:38:56,840 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\javax.inject_1.0.0.v20220405-0441.jar
+2566-05-09 13:38:56,841 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=javax.annotation_1.3.5.v20221112-0806 [30])
+2566-05-09 13:38:56,841 [Worker-43: Launching api (7)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\L3_2\L3_2\SOA\eclipse\plugins\javax.annotation_1.3.5.v20221112-0806.jar
+2566-05-09 13:38:56,846 [Worker-43: Launching api (7)] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\mine\Documents\GitHub\utisolar\api":
+2566-05-09 13:38:56,848 [Worker-43: Launching api (7)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always clean package
+2566-05-09 15:34:55,080 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-09 15:35:30,107 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-09 15:35:30,108 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-09 15:35:30,113 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-09 15:35:30,142 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-09 15:35:30,158 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-09 15:35:30,158 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-09 15:35:30,158 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-09 15:35:52,058 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-09 15:35:52,059 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-09 15:35:52,064 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-09 15:35:52,071 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-09 15:35:52,082 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-09 15:35:52,082 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-09 15:35:52,082 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-10 11:57:43,253 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-10 11:57:49,457 [Worker-7: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: utisolar:api:1.0 @ C:\Users\mine\Documents\GitHub\utisolar\api\pom.xml.
+2566-05-10 11:57:52,771 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2566-05-10 11:57:53,247 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: utisolar:api:1.0 @ C:\Users\mine\Documents\GitHub\utisolar\api\pom.xml.
+2566-05-10 11:57:57,019 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /api/src/main/java
+2566-05-10 11:57:57,019 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /api/src/main/resources
+2566-05-10 11:57:57,027 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /api/src/main/resources
+2566-05-10 11:57:57,030 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /api/src/test/java
+2566-05-10 11:57:57,872 [Worker-5: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: utisolar:api:1.0 @ C:\Users\mine\Documents\GitHub\utisolar\api\pom.xml.
+2566-05-10 11:57:59,964 [Worker-0: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for api
+2566-05-10 11:58:00,005 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 3.00 sec, update config takes 3.00 sec 
+2566-05-10 11:58:00,998 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-10 11:58:00,999 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-10 11:58:01,016 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-10 11:58:01,099 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-10 11:58:01,154 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-10 11:58:01,154 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-10 11:58:01,155 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-10 15:42:47,420 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2566-05-11 10:07:21,609 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-11 16:24:46,850 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2566-05-12 09:16:57,664 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-12 09:17:49,031 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:17:49,034 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:17:49,038 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 09:17:49,062 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 09:17:49,102 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:17:49,103 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:17:49,103 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 09:18:29,402 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:18:29,402 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:18:29,404 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 09:18:29,419 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 09:18:29,430 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:18:29,431 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:18:29,431 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 09:19:23,179 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-12 09:20:56,462 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2566-05-12 09:21:08,976 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606 [610])
+2566-05-12 09:21:08,979 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606
+2566-05-12 09:21:08,979 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\aether-connector-okhttp-0.17.8.jar
+2566-05-12 09:21:08,979 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\commons-lang3-3.8.1.jar
+2566-05-12 09:21:08,979 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\guice-4.2.2-no_aop.jar
+2566-05-12 09:21:08,979 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\jansi-2.4.0.jar
+2566-05-12 09:21:08,980 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-artifact-3.8.7.jar
+2566-05-12 09:21:08,980 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-builder-support-3.8.7.jar
+2566-05-12 09:21:08,980 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-compat-3.8.7.jar
+2566-05-12 09:21:08,980 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-core-3.8.7.jar
+2566-05-12 09:21:08,980 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-embedder-3.8.7.jar
+2566-05-12 09:21:08,980 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-model-3.8.7.jar
+2566-05-12 09:21:08,980 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-model-builder-3.8.7.jar
+2566-05-12 09:21:08,980 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-plugin-api-3.8.7.jar
+2566-05-12 09:21:08,980 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-repository-metadata-3.8.7.jar
+2566-05-12 09:21:08,981 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-api-1.6.3.jar
+2566-05-12 09:21:08,981 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-connector-basic-1.6.3.jar
+2566-05-12 09:21:08,981 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-impl-1.6.3.jar
+2566-05-12 09:21:08,981 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-provider-3.8.7.jar
+2566-05-12 09:21:08,981 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-spi-1.6.3.jar
+2566-05-12 09:21:08,981 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-transport-wagon-1.6.3.jar
+2566-05-12 09:21:08,981 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-util-1.6.3.jar
+2566-05-12 09:21:08,981 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-settings-3.8.7.jar
+2566-05-12 09:21:08,981 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-settings-builder-3.8.7.jar
+2566-05-12 09:21:08,982 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-shared-utils-3.3.4.jar
+2566-05-12 09:21:08,982 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\okhttp-3.14.1.jar
+2566-05-12 09:21:08,982 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\okio-1.17.3.jar
+2566-05-12 09:21:08,982 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\org.eclipse.sisu.inject-0.3.5.jar
+2566-05-12 09:21:08,982 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\org.eclipse.sisu.plexus-0.3.5.jar
+2566-05-12 09:21:08,982 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-build-api-0.0.7.jar
+2566-05-12 09:21:08,982 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-cipher-2.0.jar
+2566-05-12 09:21:08,982 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-classworlds-2.6.0.jar
+2566-05-12 09:21:08,983 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-component-annotations-2.1.0.jar
+2566-05-12 09:21:08,983 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-interpolation-1.26.jar
+2566-05-12 09:21:08,983 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-sec-dispatcher-2.0.jar
+2566-05-12 09:21:08,983 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-utils-3.3.1.jar
+2566-05-12 09:21:08,983 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\wagon-file-3.5.3.jar
+2566-05-12 09:21:08,983 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\wagon-provider-api-3.5.3.jar
+2566-05-12 09:21:08,984 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava_31.1.0.jre [11])
+2566-05-12 09:21:08,985 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\com.google.guava_31.1.0.jre.jar
+2566-05-12 09:21:08,985 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=slf4j.api_1.7.36 [924])
+2566-05-12 09:21:08,985 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\slf4j.api_1.7.36.jar
+2566-05-12 09:21:08,985 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=javax.inject_1.0.0.v20220405-0441 [35])
+2566-05-12 09:21:08,986 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\javax.inject_1.0.0.v20220405-0441.jar
+2566-05-12 09:21:08,986 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=javax.annotation_1.3.5.v20221203-1659 [33])
+2566-05-12 09:21:08,987 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\javax.annotation_1.3.5.v20221203-1659.jar
+2566-05-12 09:21:08,987 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.cli_1.4.0.v20221112-0806 [67])
+2566-05-12 09:21:08,988 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.apache.commons.cli_1.4.0.v20221112-0806.jar
+2566-05-12 09:21:08,988 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava.failureaccess_1.0.1 [13])
+2566-05-12 09:21:08,988 [Worker-37: Launching api] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\com.google.guava.failureaccess_1.0.1.jar
+2566-05-12 09:21:08,990 [Worker-37: Launching api] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\mine\Documents\GitHub\utisolar\api":
+2566-05-12 09:21:08,992 [Worker-37: Launching api] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always clean package
+2566-05-12 09:24:13,357 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-12 09:24:18,181 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:24:18,183 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:24:18,196 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 09:24:18,250 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 09:24:18,280 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:24:18,280 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:24:18,280 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 09:34:36,887 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-12 09:36:37,190 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2566-05-12 09:36:37,672 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: utisolar:api:1.0 @ C:\Users\mine\Documents\GitHub\utisolar\api\pom.xml.
+2566-05-12 09:36:38,555 [Worker-11: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /api/src/main/java
+2566-05-12 09:36:38,556 [Worker-11: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /api/src/main/resources
+2566-05-12 09:36:38,556 [Worker-11: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /api/src/main/resources
+2566-05-12 09:36:38,556 [Worker-11: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /api/src/test/java
+2566-05-12 09:36:39,916 [Worker-11: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for api
+2566-05-12 09:36:39,961 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 1.00 sec, update config takes 1.00 sec 
+2566-05-12 09:36:40,895 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:36:40,895 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:36:40,902 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 09:36:40,936 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 09:36:40,974 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:36:40,974 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:36:40,974 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 09:36:40,975 [Worker-4: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of api
+2566-05-12 09:36:40,979 [Worker-4: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for api
+2566-05-12 09:37:58,931 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:37:58,931 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:37:58,933 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 09:37:58,939 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 09:37:58,944 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:37:58,944 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:37:58,944 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 09:40:46,471 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:40:46,471 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:40:46,472 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 09:40:46,481 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 09:40:46,489 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:40:46,489 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:40:46,489 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 09:45:11,182 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:45:11,182 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:45:11,184 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 09:45:11,191 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 09:45:11,196 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:45:11,196 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:45:11,196 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 09:47:35,208 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:47:35,208 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:47:35,209 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 09:47:35,214 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 09:47:35,219 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:47:35,219 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:47:35,219 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 09:54:35,420 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:54:35,420 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:54:35,421 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 09:54:35,428 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 09:54:35,433 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:54:35,433 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:54:35,433 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 09:55:13,288 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:55:13,288 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:55:13,290 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 09:55:13,296 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 09:55:13,301 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:55:13,301 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:55:13,301 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 09:55:42,422 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:55:42,422 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:55:42,423 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 09:55:42,429 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 09:55:42,435 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 09:55:42,436 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 09:55:42,436 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:10:18,006 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:10:18,007 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:10:18,008 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:10:18,019 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:10:18,024 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:10:18,024 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:10:18,024 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:10:37,032 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:10:37,032 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:10:37,034 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:10:37,040 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:10:37,045 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:10:37,045 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:10:37,045 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:10:39,280 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:10:39,280 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:10:39,281 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:10:39,292 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:10:39,296 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:10:39,296 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:10:39,296 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:11:21,871 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:11:21,871 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:11:21,872 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:11:21,876 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:11:21,881 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:11:21,881 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:11:21,881 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:12:29,879 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:12:29,879 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:12:29,880 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:12:29,885 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:12:29,889 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:12:29,889 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:12:29,889 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:13:32,621 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:13:32,621 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:13:32,622 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:13:32,626 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:13:32,630 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:13:32,630 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:13:32,630 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:14:13,105 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:14:13,105 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:14:13,106 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:14:13,111 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:14:13,115 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:14:13,115 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:14:13,115 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:24:24,842 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:24:24,842 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:24:24,844 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:24:24,851 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:24:24,858 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:24:24,858 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:24:24,858 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:25:47,823 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:25:47,823 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:25:47,825 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:25:47,833 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:25:47,837 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:25:47,837 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:25:47,837 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:28:14,361 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:28:14,361 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:28:14,363 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:28:14,369 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:28:14,373 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:28:14,373 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:28:14,373 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:41:54,006 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:41:54,006 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:41:54,007 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:41:54,016 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:41:54,021 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:41:54,021 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:41:54,021 [Worker-75: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:43:51,475 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:43:51,476 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:43:51,477 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:43:51,482 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:43:51,486 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:43:51,486 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:43:51,486 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:44:20,736 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:44:20,736 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:44:20,738 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:44:20,743 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:44:20,747 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:44:20,747 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:44:20,747 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:50:37,503 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:50:37,503 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:50:37,503 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:50:37,510 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:50:37,515 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:50:37,515 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:50:37,515 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:51:24,860 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:51:24,860 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:51:24,862 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:51:24,869 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:51:24,873 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:51:24,873 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:51:24,873 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:51:57,812 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:51:57,812 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:51:57,814 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:51:57,818 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:51:57,823 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:51:57,823 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:51:57,823 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:52:59,005 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:52:59,005 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:52:59,007 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-12 10:52:59,031 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-12 10:52:59,039 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-12 10:52:59,039 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-12 10:52:59,039 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-12 10:56:59,658 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2566-05-12 10:57:06,524 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606 [610])
+2566-05-12 10:57:06,526 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606
+2566-05-12 10:57:06,527 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\aether-connector-okhttp-0.17.8.jar
+2566-05-12 10:57:06,527 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\commons-lang3-3.8.1.jar
+2566-05-12 10:57:06,527 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\guice-4.2.2-no_aop.jar
+2566-05-12 10:57:06,527 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\jansi-2.4.0.jar
+2566-05-12 10:57:06,527 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-artifact-3.8.7.jar
+2566-05-12 10:57:06,527 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-builder-support-3.8.7.jar
+2566-05-12 10:57:06,527 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-compat-3.8.7.jar
+2566-05-12 10:57:06,528 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-core-3.8.7.jar
+2566-05-12 10:57:06,528 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-embedder-3.8.7.jar
+2566-05-12 10:57:06,528 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-model-3.8.7.jar
+2566-05-12 10:57:06,528 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-model-builder-3.8.7.jar
+2566-05-12 10:57:06,528 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-plugin-api-3.8.7.jar
+2566-05-12 10:57:06,528 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-repository-metadata-3.8.7.jar
+2566-05-12 10:57:06,528 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-api-1.6.3.jar
+2566-05-12 10:57:06,528 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-connector-basic-1.6.3.jar
+2566-05-12 10:57:06,528 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-impl-1.6.3.jar
+2566-05-12 10:57:06,529 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-provider-3.8.7.jar
+2566-05-12 10:57:06,529 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-spi-1.6.3.jar
+2566-05-12 10:57:06,529 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-transport-wagon-1.6.3.jar
+2566-05-12 10:57:06,529 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-resolver-util-1.6.3.jar
+2566-05-12 10:57:06,529 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-settings-3.8.7.jar
+2566-05-12 10:57:06,529 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-settings-builder-3.8.7.jar
+2566-05-12 10:57:06,530 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\maven-shared-utils-3.3.4.jar
+2566-05-12 10:57:06,530 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\okhttp-3.14.1.jar
+2566-05-12 10:57:06,530 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\okio-1.17.3.jar
+2566-05-12 10:57:06,530 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\org.eclipse.sisu.inject-0.3.5.jar
+2566-05-12 10:57:06,530 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\org.eclipse.sisu.plexus-0.3.5.jar
+2566-05-12 10:57:06,530 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-build-api-0.0.7.jar
+2566-05-12 10:57:06,530 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-cipher-2.0.jar
+2566-05-12 10:57:06,530 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-classworlds-2.6.0.jar
+2566-05-12 10:57:06,530 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-component-annotations-2.1.0.jar
+2566-05-12 10:57:06,531 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-interpolation-1.26.jar
+2566-05-12 10:57:06,531 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-sec-dispatcher-2.0.jar
+2566-05-12 10:57:06,531 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\plexus-utils-3.3.1.jar
+2566-05-12 10:57:06,531 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\wagon-file-3.5.3.jar
+2566-05-12 10:57:06,531 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.eclipse.m2e.maven.runtime_3.8.701.20230209-1606\jars\wagon-provider-api-3.5.3.jar
+2566-05-12 10:57:06,532 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava_31.1.0.jre [11])
+2566-05-12 10:57:06,533 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\com.google.guava_31.1.0.jre.jar
+2566-05-12 10:57:06,533 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=slf4j.api_1.7.36 [924])
+2566-05-12 10:57:06,533 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\slf4j.api_1.7.36.jar
+2566-05-12 10:57:06,533 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=javax.inject_1.0.0.v20220405-0441 [35])
+2566-05-12 10:57:06,534 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\javax.inject_1.0.0.v20220405-0441.jar
+2566-05-12 10:57:06,534 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=javax.annotation_1.3.5.v20221203-1659 [33])
+2566-05-12 10:57:06,534 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\javax.annotation_1.3.5.v20221203-1659.jar
+2566-05-12 10:57:06,534 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.cli_1.4.0.v20221112-0806 [67])
+2566-05-12 10:57:06,535 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\org.apache.commons.cli_1.4.0.v20221112-0806.jar
+2566-05-12 10:57:06,535 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava.failureaccess_1.0.1 [13])
+2566-05-12 10:57:06,536 [Worker-74: Launching api (1)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\mine\Desktop\Job Training\eclipse\plugins\com.google.guava.failureaccess_1.0.1.jar
+2566-05-12 10:57:06,538 [Worker-74: Launching api (1)] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\mine\Documents\GitHub\utisolar\api":
+2566-05-12 10:57:06,538 [Worker-74: Launching api (1)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always clean package
+2566-05-15 08:56:16,760 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2566-05-15 09:02:24,766 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-15 09:02:32,137 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-15 09:02:32,138 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-15 09:02:32,151 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-15 09:02:32,208 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-15 09:02:32,248 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-15 09:02:32,248 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-15 09:02:32,248 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-15 09:03:18,398 [Worker-132: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2566-05-15 09:03:18,844 [Worker-132: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: utisolar:api:1.0 @ C:\Users\mine\Documents\GitHub\utisolar\api\pom.xml.
+2566-05-15 09:03:19,843 [Worker-132: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /api/src/main/java
+2566-05-15 09:03:19,844 [Worker-132: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /api/src/main/resources
+2566-05-15 09:03:19,844 [Worker-132: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /api/src/main/resources
+2566-05-15 09:03:19,845 [Worker-132: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /api/src/test/java
+2566-05-15 09:03:21,224 [Worker-132: Updating Maven Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-15 09:03:21,224 [Worker-132: Updating Maven Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-15 09:03:21,230 [Worker-132: Updating Maven Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-15 09:03:21,245 [Worker-132: Updating Maven Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-15 09:03:21,270 [Worker-132: Updating Maven Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-15 09:03:21,270 [Worker-132: Updating Maven Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-15 09:03:21,271 [Worker-132: Updating Maven Project] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-15 09:03:21,271 [Worker-132: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of api
+2566-05-15 09:03:21,273 [Worker-132: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for api
+2566-05-15 09:03:21,450 [Worker-132: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for api
+2566-05-15 09:03:21,473 [Worker-132: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 1.00 sec, update config takes 1.00 sec 
+2566-05-15 09:03:22,069 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-15 09:03:22,070 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-15 09:03:22,070 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-15 09:03:22,072 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-15 09:03:22,102 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-15 09:03:22,102 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-15 09:03:22,102 [Worker-20: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-15 09:03:22,102 [Worker-20: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of api
+2566-05-15 09:03:22,102 [Worker-20: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for api
+2566-05-15 10:57:23,837 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-15 10:58:03,293 [main] INFO  org.hibernate.cfg.Environment - Hibernate 3.5.6-Final
+2566-05-15 10:58:03,317 [main] INFO  org.hibernate.cfg.Environment - hibernate.properties not found
+2566-05-15 10:58:03,319 [main] INFO  org.hibernate.cfg.Environment - Bytecode provider name : javassist
+2566-05-15 10:58:03,325 [main] INFO  org.hibernate.cfg.Environment - using JDK 1.4 java.sql.Timestamp handling
+2566-05-15 10:58:03,410 [main] INFO  org.hibernate.cfg.Configuration - configuring from XML document
+2566-05-15 10:58:03,411 [main] INFO  org.hibernate.cfg.Configuration - Configured SessionFactory: null
+2566-05-15 11:10:51,785 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
