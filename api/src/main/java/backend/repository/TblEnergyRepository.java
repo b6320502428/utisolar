@@ -7,7 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import backend.model.TblEnergy;
-//import backend.model.TblEnergyId;
 
 public interface TblEnergyRepository extends CrudRepository<TblEnergy, Integer> {
 

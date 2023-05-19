@@ -392,7 +392,7 @@ export default function Dashboard() {
         <View style={styles.dataContainer}>
           <View style={styles.headContainer}>
             <MaterialCommunityIcons name='molecule-co2' size={30} color="black" style={{ marginRight: 5, marginLeft: 5 }} />
-            <Text style={{ color: 'black', fontSize: 20 }}>ค่า CO2E : {(energyThisMonth * 0.392).toFixed(2)} kg</Text>
+            <Text style={{ color: 'black', fontSize: 20 }}>ค่า CO2e : {(energyThisMonth * 0.392).toFixed(2)} kg</Text>
           </View>
         </View>
         <View style={styles.dataContainer}>

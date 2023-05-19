@@ -2,7 +2,7 @@
   "expo": {
     "name": "En2Mob",
     "slug": "utisolarApp",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/appLogo.png",
     "userInterfaceStyle": "light",
@@ -19,6 +19,7 @@
       "bundleIdentifier": "com.proqppq123.utisolarApp"
     },
     "android": {
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/appLogo.png",
         "backgroundColor": "#ffffff"

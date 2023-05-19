@@ -82,20 +82,19 @@ const LoginScreen = ({ navigation }) => {
           <View style={styles.dataContainer}>
             <View style={styles.headContainer}>
               <Text style={styles.textData}>Login</Text>
-              <Image style={{ width: 200, height: 200 }} source={require('./assets/logo.png')} />
+              <Image style={{ width: 300, height: 200 }} source={require('./assets/logo.png')} />
               <TextInput
-                placeholder="Username"
-                leftIcon={<Ionicons name="md-person" size={24} color="black" />}
+                placeholder=" Username"
                 value={username}
                 onChangeText={setUsername}
-                style={{ backgroundColor: "#D7D7D7", margin: 10, width: '95%', alignSelf: 'center' }}
+                style={{ backgroundColor: "#D7D7D7", margin: 10, width: '95%', alignSelf: 'center', height:50,fontSize:20 }}
               />
               <TextInput
-                placeholder="Password"
+                placeholder=" Password"
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
-                style={{ backgroundColor: "#D7D7D7", margin: 10, width: '95%', alignSelf: 'center' }}
+                style={{ backgroundColor: "#D7D7D7", margin: 10, width: '95%', alignSelf: 'center', height:50,fontSize:20}}
               />
               <TouchableOpacity
                 style={styles.button} onPress={handleLogin}>
@@ -188,14 +187,17 @@ const styles = StyleSheet.create({
     backgroundColor: "blue",
     padding: 10,
     borderRadius: 10,
-    margin: 10
+    margin: 10,
+    height:50,
+    width: 100
   },
   textStyle: {
-    color: "white"
+    color: "white",
+    fontSize:20
   },
   textData: {
     color: 'black',
-    fontSize: 20,
+    fontSize: 25,
     margin: 10
   }
 });
