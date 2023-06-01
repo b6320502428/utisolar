@@ -5712,3 +5712,12 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact io.jsonwebtok
 2566-05-15 15:07:09,744 [Worker-6: Launching UtiSolarApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2566-05-15 15:07:09,744 [Worker-6: Launching UtiSolarApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2566-05-15 15:07:09,744 [Worker-6: Launching UtiSolarApiApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-05-30 09:30:16,471 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2566-05-30 09:30:21,474 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-30 09:30:21,476 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-30 09:30:21,490 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2566-05-30 09:30:21,541 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2566-05-30 09:30:21,563 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2566-05-30 09:30:21,563 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2566-05-30 09:30:21,563 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\mine\Documents\GitHub\utisolar\api\src\test\resources
+2566-06-01 14:10:48,775 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

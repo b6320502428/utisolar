@@ -2,7 +2,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, TextInput, TouchableOpacity, Alert, Text, SafeAreaView, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialIcons, FontAwesome5, AntDesign, MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
@@ -84,17 +84,17 @@ const LoginScreen = ({ navigation }) => {
               <Text style={styles.textData}>Login</Text>
               <Image style={{ width: 300, height: 200 }} source={require('./assets/logo.png')} />
               <TextInput
-                placeholder=" Username"
+                placeholder="Username"
                 value={username}
                 onChangeText={setUsername}
-                style={{ backgroundColor: "#D7D7D7", margin: 10, width: '95%', alignSelf: 'center', height:50,fontSize:20 }}
+                style={{ backgroundColor: "#D7D7D7", margin: 10, width: '95%', alignSelf: 'center', height: 50, fontSize: 20, paddingLeft: 5 }}
               />
               <TextInput
-                placeholder=" Password"
+                placeholder="Password"
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
-                style={{ backgroundColor: "#D7D7D7", margin: 10, width: '95%', alignSelf: 'center', height:50,fontSize:20}}
+                style={{ backgroundColor: "#D7D7D7", margin: 10, width: '95%', alignSelf: 'center', height: 50, fontSize: 20, paddingLeft: 5 }}
               />
               <TouchableOpacity
                 style={styles.button} onPress={handleLogin}>
@@ -146,10 +146,10 @@ const App = () => {
               })
               }
             >
-              <Tab.Screen name="dashboard" component={DashboardComponents} options={{ title: "Dashboard" }} />
-              <Tab.Screen name="monitoring" component={MonitoringComponents} options={{ title: "Monitoring" }} />
-              <Tab.Screen name="billing" component={BillingComponents} options={{ title: "Billing" }} />
-              <Tab.Screen name="profile" component={ProfileComponents} options={{ title: "Profile" }} />
+              <Tab.Screen name="dashboard" component={DashboardComponents} options={{ title: "Dashboard", unmountOnBlur: true }} />
+              <Tab.Screen name="monitoring" component={MonitoringComponents} options={{ title: "Monitoring", unmountOnBlur: true }} />
+              <Tab.Screen name="billing" component={BillingComponents} options={{ title: "Billing", unmountOnBlur: true }} />
+              <Tab.Screen name="profile" component={ProfileComponents} options={{ title: "Profile", unmountOnBlur: true }} />
             </Tab.Navigator>
           )}
         </Stack.Screen>
@@ -188,12 +188,12 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     margin: 10,
-    height:50,
+    height: 50,
     width: 100
   },
   textStyle: {
     color: "white",
-    fontSize:20
+    fontSize: 20
   },
   textData: {
     color: 'black',

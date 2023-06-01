@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Dimensions, ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { Picker } from '@react-native-picker/picker';
 import DatePicker from 'react-native-modern-datepicker';
 import * as Progress from 'react-native-progress';
@@ -14,6 +14,9 @@ export default function Monitoring() {
     const formattedDate = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1).toString().padStart(2, '0') + '-' + currentDate.getDate().toString().padStart(2, '0');
     const [selectedDate, setSelectedDate] = useState(formattedDate);
     const formattedDate2 = currentDate.getDate().toString().padStart(2, '0') + '-' + (currentDate.getMonth() + 1).toString().padStart(2, '0') + '-' + currentDate.getFullYear();
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+
     const [displayDate, setDisplayDate] = useState(formattedDate2);
     const [selectedValue, setSelectedValue] = useState('1');
     const [chartData, setChartData] = useState({
@@ -114,7 +117,7 @@ export default function Monitoring() {
     }
 
     const handleSubmit = () => {
-
+        setIsLoading(true)
         let command;
         switch (selectedValue) {
             case '1':
@@ -175,29 +178,47 @@ export default function Monitoring() {
                         });
                     }
                     else if (command === "getsumeachmonthbyyear") {
+                        const allMonth = Array.from({ length: 12 }, (_, index) => {
+                            const monthIndex = index + 1;
+                            const monthName = new Date(0, monthIndex).toLocaleString('default', { month: 'short' });
+                            return { monthIndex, monthName };
+                        });
+                        const dataMap1 = new Map(json.map(item => {
+                            const date = new Date(item[0]);
+                            date.setDate(date.getDate() + 1);
+                            return [date.getMonth() + 1, item[2]/1000];
+                        }));
+                        const dataMap2 = new Map(json.map(item => {
+                            const date = new Date(item[0]);
+                            date.setDate(date.getDate() + 1);
+                            return [date.getMonth() + 1, item[3]/1000];
+                        }));
+                        const dataMap3 = new Map(json.map(item => {
+                            const date = new Date(item[0]);
+                            date.setDate(date.getDate() + 1);
+                            return [date.getMonth() + 1, item[1]/1000];
+                        }));
+                        const dataset = allMonth.map((month) => ({
+                            x: month.monthName.toString(),
+                            a: dataMap1.get(month.monthIndex) || 0,
+                            b: dataMap2.get(month.monthIndex) || 0,
+                            c: dataMap3.get(month.monthIndex) || 0,
+                        }));
                         setChartData({
-                            labels: json.map((item, i) => {
-                                if (i % 2 === 0) {
-                                    const date = new Date(item[0]);
-                                    date.setMonth(date.getMonth());
-                                    const month = date.toLocaleString('default', { month: 'long' });
-                                    return `${month}`;
-                                }
-                                return '';
-                            }),
+                            labels: dataset.map((item) => item.x),
                             datasets: [
                                 {
-                                    data: json.map((item) => item[2] / 1000),
+                                    data: dataset.map((item) => item.a),
                                     color: (opacity = 1) => `rgba(44, 193, 0, ${opacity})`,
                                     strokeWidth: 2,
                                 },
                                 {
-                                    data: json.map((item) => item[3] / 1000),
+                                    data: dataset.map((item) => item.b),
                                     color: (opacity = 1) => `rgba(40, 170, 231, ${opacity})`,
                                     strokeWidth: 2,
                                 },
                                 {
-                                    data: json.map((item) => item[1] / 1000),
+                                    data: dataset.map((item) => item.c),
                                     color: (opacity = 1) => `rgba(255, 0, 0, ${opacity})`,
                                     strokeWidth: 2,
                                 },
@@ -276,8 +297,12 @@ export default function Monitoring() {
                     const newDateStr = `${parts[2]}-${parts[1]}-${parts[0]}`;
                     setMonitoringDate(newDateStr)
                 }
+                setIsLoading(false)
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                setError(error)
+                setIsLoading(false)
+            });
         setMonitoringType(selectedValue)
         setIsHidden(true)
     }
@@ -343,12 +368,22 @@ export default function Monitoring() {
                                                 });
                                                 SumData(json)
                                             }
+                                            setIsLoading(false)
                                         })
-                                        .catch(error => console.error(error));
+                                        .catch(error => {
+                                            setError(error)
+                                            setIsLoading(false)
+                                        });
                                 })
-                                .catch(error => console.error(error));
+                                .catch(error => {
+                                    setError(error)
+                                    setIsLoading(false)
+                                });
                         })
-                        .catch(error => console.error(error));
+                        .catch(error => {
+                            setError(error)
+                            setIsLoading(false)
+                        });
                 });
         }
         fetchSite()
@@ -379,6 +414,7 @@ export default function Monitoring() {
                     style={styles.datePicker}
                     selected={selectedDate}
                     current={selectedDate}
+                    maximumDate={formattedDate}
                     onSelectedChange={date => {
                         const newDate = date.replace(/\//g, '-');
                         if (newDate !== selectedDate) {
@@ -405,143 +441,186 @@ export default function Monitoring() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.container}>
-                <View style={styles.dataContainer}>
-                    <View style={styles.headContainer}>
-                        <AntDesign name="dashboard" size={20} color="white" style={{ marginRight: 5, marginLeft: 5 }}/>
-                        <Text style={{ color: 'white', fontSize: 20 }}>Board
-                            {site !== null ? (
-                                <Text style={styles.textData}> ({site.sitename})</Text>
-                            ) : (
-                                <ActivityIndicator />
-                            )}</Text>
-                    </View>
-                    <SelectOptions />
-                    <TouchableOpacity style={styles.button} onPress={handleSelectDate}>
-                        <Text style={styles.buttonText}>Select Date ({displayDate})</Text>
-                    </TouchableOpacity>
-                    {!isHidden && (
-                        <BasicUsage />
-                    )}
-                    <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                        <Text style={styles.buttonText}>Submit</Text>
-                    </TouchableOpacity>
-                    <Text style={{ color: 'black', fontSize: 18, alignSelf: 'center' }}>Monitoring On {monitoringDate} 
-                        {monitoringType === '1' && ' Daily'}
-                        {monitoringType === '2' && ' Weekly'}
-                        {monitoringType === '3' && ' Monthly'}
-                        {monitoringType === '4' && ' Yearly'}
-                        {!['1', '2', '3', '4'].includes(monitoringType) && ' Day'}</Text>
-                    <View style={styles.solutionContainer}>
-                        <View style={styles.inContainer}>
-                            <Text style={{ color: 'black', fontSize: 20 }}>System Production</Text>
-                            <Text style={{ color: 'green', fontSize: 20 }}>{sumProduct} kWh</Text>
+            {!isLoading && error && error.message === 'Network request failed' ? (
+                <View style={styles.container}>
+                    <View style={styles.dataContainer}>
+                        <View style={styles.errorContainer}>
+                            <Text style={styles.textData}>Error</Text>
+                            <MaterialCommunityIcons name="access-point-network-off" size={100} color="#5800BB" />
+                            <Text style={styles.textData}>Network request failed</Text>
+                            <Text style={styles.textData}>The server is fail</Text>
+                            <Text style={styles.textData}>Please change URL or try again later</Text>
                         </View>
-                        <Progress.Bar progress={percentExport / 100} width={350} height={30} color={'blue'} unfilledColor={'green'} borderColor={'black'} style={{ alignSelf: 'center', margin: 10 }} />
-                        <TouchableOpacity style={styles.row}>
-                            <Text style={[styles.rowText, { color: 'blue' }]}>{percentExport}%</Text>
-                            <Text style={[styles.rowText, { color: 'green' }]}>{(100 - percentExport).toFixed(2)}%</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.row}>
-                            <Text style={styles.rowText}>Self-consumption</Text>
-                            <Text style={styles.rowText}>Export</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.row}>
-                            <Text style={[styles.rowText, { color: 'blue' }]}>{sumSelfConsumption} kWh</Text>
-                            <Text style={[styles.rowText, { color: 'green' }]}>{sumExport} kWh</Text>
-                        </TouchableOpacity>
                     </View>
-                    <View style={styles.solutionContainer}>
-                        <View style={styles.inContainer}>
-                            <Text style={{ color: 'black', fontSize: 20 }}>Consumption</Text>
-                            <Text style={{ color: 'red', fontSize: 20 }}>{sumConsumption} kWh</Text>
-                        </View>
-                        <Progress.Bar progress={percentImport / 100} width={350} height={30} color={'blue'} unfilledColor={'red'} borderColor={'black'} style={{ alignSelf: 'center', margin: 10 }} />
-                        <TouchableOpacity style={styles.row}>
-                            <Text style={styles.rowText}>{percentImport}%</Text>
-                            <Text style={styles.rowText}>{(100 - percentImport).toFixed(2)}%</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.row}>
-                            <Text style={styles.rowText}>Self-consumption</Text>
-                            <Text style={styles.rowText}>Import</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.row}>
-                            <Text style={styles.rowText}>{sumSelfConsumption} kWh</Text>
-                            <Text style={styles.rowText}>{sumImport} kWh</Text>
-                        </TouchableOpacity>
-
-                    </View>
-                    <View style={styles.chartContainer}>
-                        {chartData.datasets.length > 0 ? (
-                            <View>
-                                <View style={styles.headContainer}>
-                                <MaterialCommunityIcons name='chart-bell-curve' size={20} color="white" style={{ marginRight: 5, marginLeft: 5 }} />
-                                    <Text style={{ color: 'white', fontSize: 20 }}>Summarize (kWh)</Text>
-                                </View>
-                                <LineChart
-                                    data={updateData()}
-                                    width={Dimensions.get("window").width - 7}
-                                    height={220}
-                                    yAxisInterval={100}
-                                    fromZero={true}
-                                    chartConfig={{
-                                        fillShadowGradientFrom: "#FFFFFF",
-                                        fillShadowGradientFromOpacity: 0,
-                                        fillShadowGradientTo: "#FFFFFF",
-                                        fillShadowGradientToOpacity: 0,
-                                        backgroundGradientFrom: "#FFFFFF",
-                                        backgroundGradientFromOpacity: 0,
-                                        backgroundGradientTo: "#FFFFFF",
-                                        backgroundGradientToOpacity: 0.5,
-                                        decimalPlaces: 2,
-                                        color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-                                        labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-                                        style: {
-                                            borderRadius: 16,
-                                        },
-                                        propsForDots: {
-                                            r: "0",
-                                            strokeWidth: "1",
-                                            stroke: "black",
-                                        },
-                                        contentInset: { left: -20, right: 10, top: 10, bottom: 10 },
-                                        barPercentage: 0.5
-                                    }}
-                                    bezier
-                                    style={{
-                                        marginTop: 5,
-                                        borderRadius: 16,
-                                    }}
-                                />
-                                <View style={[styles.legendContainer]}>
-                                    <View style={[styles.legendContainer]}>
-                                        <TouchableOpacity activeOpacity={1} style={[styles.legendContainer, { opacity: showLine1 ? 1 : 0.1 }]} onPress={() => setShowLine1(!showLine1)}>
-                                            <View style={{ backgroundColor: 'rgb(44, 193, 0)', width: 14, height: 14, alignSelf: 'center' }}></View>
-                                            <Text style={[styles.legendText, { color: 'rgb(44, 193, 0)' }]}> System Production</Text>
-                                        </TouchableOpacity>
-                                    </View>
-                                    <View style={[styles.legendContainer]}>
-                                        <TouchableOpacity activeOpacity={1} style={[styles.legendContainer, { opacity: showLine2 ? 1 : 0.1 }]} onPress={() => setShowLine2(!showLine2)}>
-                                            <View style={{ backgroundColor: 'rgb(40, 170, 231)', width: 14, height: 14, alignSelf: 'center' }}></View>
-                                            <Text style={[styles.legendText, { color: 'rgb(40, 170, 231)' }]}> Self-consumption</Text>
-                                        </TouchableOpacity>
-                                    </View>
-                                    <View style={[styles.legendContainer]}>
-                                        <TouchableOpacity activeOpacity={1} style={[styles.legendContainer, { opacity: showLine3 ? 1 : 0.1 }]} onPress={() => setShowLine3(!showLine3)}>
-                                            <View style={{ backgroundColor: 'rgb(255, 0, 0)', width: 14, height: 14, alignSelf: 'center' }}></View>
-                                            <Text style={[styles.legendText, { color: 'rgb(255, 0, 0)' }]}> Consumption</Text>
-                                        </TouchableOpacity>
-                                    </View>
-                                </View>
-                            </View>
-                        ) : (
-                            <Text style={{ color: 'black', fontSize: 20, alignSelf: 'center' }}>ไม่พบข้อมูล</Text>
-                        )}
-                    </View>
-                    <Text style={{ color: 'white', fontSize: 20, alignSelf: 'center' }}>...</Text>
                 </View>
+            ) : !isLoading && error ? (
+                <View style={styles.container}>
+                    <View style={styles.dataContainer}>
+                        <View style={styles.errorContainer}>
+                            <Text style={styles.textData}>Error</Text>
+                            <MaterialIcons name="error" size={100} color="#5800BB" />
+                            <Text style={styles.textData}>Unknown error</Text>
+                            <Text style={styles.textData}>Please try again later</Text>
+                        </View>
+                    </View>
+                </View>
+            ) : !isLoading ? (
+                <ScrollView style={styles.container}>
+                    <View style={styles.dataContainer}>
+                        <View style={styles.headContainer}>
+                            <AntDesign name="dashboard" size={20} color="white" style={{ marginRight: 5, marginLeft: 5 }} />
+                            <Text style={{ color: 'white', fontSize: 20 }}>Board
+                                {site !== null ? (
+                                    <Text style={styles.textData}> ({site.sitename})</Text>
+                                ) : (
+                                    <ActivityIndicator />
+                                )}</Text>
+                        </View>
+                        <SelectOptions />
+                        <TouchableOpacity style={styles.button} onPress={handleSelectDate}>
+                            <Text style={styles.buttonText}>Select Date ({displayDate})</Text>
+                        </TouchableOpacity>
+                        {!isHidden && (
+                            <BasicUsage />
+                        )}
+                        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+                            <Text style={styles.buttonText}>Submit</Text>
+                        </TouchableOpacity>
+                        <Text style={{ color: 'black', fontSize: 18, alignSelf: 'center' }}>Monitoring On {monitoringDate}
+                            {monitoringType === '1' && ' Daily'}
+                            {monitoringType === '2' && ' Weekly'}
+                            {monitoringType === '3' && ' Monthly'}
+                            {monitoringType === '4' && ' Yearly'}
+                            {!['1', '2', '3', '4'].includes(monitoringType) && ' Day'}</Text>
+                        <View style={styles.solutionContainer}>
+                            <View style={styles.inContainer}>
+                                <Text style={{ color: 'black', fontSize: 20 }}>System Production</Text>
+                                <Text style={{ color: 'green', fontSize: 20 }}>{sumProduct} kWh</Text>
+                            </View>
+                            <Progress.Bar progress={percentExport / 100} width={350} height={30} color={'blue'} unfilledColor={'green'} borderColor={'black'} style={{ alignSelf: 'center', margin: 10 }} />
+                            <TouchableOpacity style={styles.row}>
+                                <Text style={[styles.rowText, { color: 'blue' }]}>{percentExport}%</Text>
+                                <Text style={[styles.rowText, { color: 'green' }]}>{(100 - percentExport).toFixed(2)}%</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.row}>
+                                <Text style={styles.rowText}>Self-consumption</Text>
+                                <Text style={styles.rowText}>Export</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.row}>
+                                <Text style={[styles.rowText, { color: 'blue' }]}>{sumSelfConsumption} kWh</Text>
+                                <Text style={[styles.rowText, { color: 'green' }]}>{sumExport} kWh</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.solutionContainer}>
+                            <View style={styles.inContainer}>
+                                <Text style={{ color: 'black', fontSize: 20 }}>Consumption</Text>
+                                <Text style={{ color: 'red', fontSize: 20 }}>{sumConsumption} kWh</Text>
+                            </View>
+                            <Progress.Bar progress={percentImport / 100} width={350} height={30} color={'blue'} unfilledColor={'red'} borderColor={'black'} style={{ alignSelf: 'center', margin: 10 }} />
+                            <TouchableOpacity style={styles.row}>
+                                <Text style={styles.rowText}>{percentImport}%</Text>
+                                <Text style={styles.rowText}>{(100 - percentImport).toFixed(2)}%</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.row}>
+                                <Text style={styles.rowText}>Self-consumption</Text>
+                                <Text style={styles.rowText}>Import</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.row}>
+                                <Text style={styles.rowText}>{sumSelfConsumption} kWh</Text>
+                                <Text style={styles.rowText}>{sumImport} kWh</Text>
+                            </TouchableOpacity>
 
-            </ScrollView>
+                        </View>
+                        <View style={styles.chartContainer}>
+                            {chartData.datasets.length > 0 ? (
+                                <View>
+                                    <View style={styles.headContainer}>
+                                        <MaterialCommunityIcons name='chart-bell-curve' size={20} color="white" style={{ marginRight: 5, marginLeft: 5 }} />
+                                        <Text style={{ color: 'white', fontSize: 20 }}>Summarize (kWh)</Text>
+                                    </View>
+                                    <Text style={{ paddingLeft: 45 }}>Value</Text>
+                                    <LineChart
+                                        data={updateData()}
+                                        width={Dimensions.get("window").width - 7}
+                                        height={220}
+                                        yAxisInterval={100}
+                                        fromZero={true}
+                                        chartConfig={{
+                                            fillShadowGradientFrom: "#FFFFFF",
+                                            fillShadowGradientFromOpacity: 0,
+                                            fillShadowGradientTo: "#FFFFFF",
+                                            fillShadowGradientToOpacity: 0,
+                                            backgroundGradientFrom: "#FFFFFF",
+                                            backgroundGradientFromOpacity: 0,
+                                            backgroundGradientTo: "#FFFFFF",
+                                            backgroundGradientToOpacity: 0.5,
+                                            decimalPlaces: 2,
+                                            color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                                            labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                                            style: {
+                                                borderRadius: 16,
+                                            },
+                                            propsForDots: {
+                                                r: "0",
+                                                strokeWidth: "1",
+                                                stroke: "black",
+                                            },
+                                            contentInset: { left: -20, right: 10, top: 10, bottom: 10 },
+                                            barPercentage: 0.5
+                                        }}
+                                        bezier
+                                        style={{
+                                            marginTop: 5,
+                                            borderRadius: 16,
+                                        }}
+                                    />
+                                    {monitoringType == 2 ? (
+                                                    <Text style={{ paddingRight: 5, paddingBottom: 5, alignSelf: 'flex-end' }}>Day</Text>
+                                                ) : monitoringType == 3 ? (
+                                                    <Text style={{ paddingRight: 5, paddingBottom: 5, alignSelf: 'flex-end' }}>Day</Text>
+                                                ) : monitoringType == 4 ? (
+                                                    <Text style={{ paddingRight: 5, paddingBottom: 5, alignSelf: 'flex-end' }}>Year</Text>
+                                                ) : (
+                                                    <Text style={{ paddingRight: 5, paddingBottom: 5, alignSelf: 'flex-end' }}>Hour</Text>
+                                                )}
+                                    <View style={[styles.legendContainer]}>
+                                        <View style={[styles.legendContainer]}>
+                                            <TouchableOpacity activeOpacity={1} style={[styles.legendContainer, { opacity: showLine1 ? 1 : 0.1 }]} onPress={() => setShowLine1(!showLine1)}>
+                                                <View style={{ backgroundColor: 'rgb(44, 193, 0)', width: 14, height: 14, alignSelf: 'center' }}></View>
+                                                <Text style={[styles.legendText, { color: 'rgb(44, 193, 0)' }]}> System Production</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                        <View style={[styles.legendContainer]}>
+                                            <TouchableOpacity activeOpacity={1} style={[styles.legendContainer, { opacity: showLine2 ? 1 : 0.1 }]} onPress={() => setShowLine2(!showLine2)}>
+                                                <View style={{ backgroundColor: 'rgb(40, 170, 231)', width: 14, height: 14, alignSelf: 'center' }}></View>
+                                                <Text style={[styles.legendText, { color: 'rgb(40, 170, 231)' }]}> Self-consumption</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                        <View style={[styles.legendContainer]}>
+                                            <TouchableOpacity activeOpacity={1} style={[styles.legendContainer, { opacity: showLine3 ? 1 : 0.1 }]} onPress={() => setShowLine3(!showLine3)}>
+                                                <View style={{ backgroundColor: 'rgb(255, 0, 0)', width: 14, height: 14, alignSelf: 'center' }}></View>
+                                                <Text style={[styles.legendText, { color: 'rgb(255, 0, 0)' }]}> Consumption</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                                </View>
+                            ) : (
+                                <Text style={{ color: 'black', fontSize: 20, alignSelf: 'center' }}>ไม่พบข้อมูล</Text>
+                            )}
+                        </View>
+                        <Text style={{ color: 'white', fontSize: 20, alignSelf: 'center' }}>...</Text>
+                    </View>
+
+                </ScrollView>
+            ) : (
+                <View style={styles.container}>
+                    <View style={styles.dataContainer}>
+                        <View style={styles.errorContainer}>
+                            <ActivityIndicator size="large" color="#5800BB" />
+                        </View>
+                    </View>
+                </View>
+            )}
         </SafeAreaView>
     );
 }

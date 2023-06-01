@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import DatePicker from 'react-native-modern-datepicker';
-import { Fontisto } from '@expo/vector-icons';
+import { Fontisto, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
 export default function Billing() {
 
@@ -10,9 +10,12 @@ export default function Billing() {
     const formattedDate = currentDate.getFullYear() + ' ' + (currentDate.getMonth() + 1).toString().padStart(2, '0')
     const [date, setDate] = useState(formattedDate);
     const formattedDate2 = (currentDate.getMonth() + 1).toString().padStart(2, '0') + '-' + currentDate.getFullYear()
+    const [isHidden, setIsHidden] = useState(true);
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+
     const [displayDate, setDisplayDate] = useState(formattedDate2);
     const [billingDate, setBillingDate] = useState(null);
-    const [isHidden, setIsHidden] = useState(true);
     const [site, setSite] = useState({});
     const [billingType, setBillingType] = useState({});
     const [ft, setFt] = useState(0);                    // FT Rate
@@ -48,15 +51,26 @@ export default function Billing() {
                             .then(response => response.json())
                             .then((json) => {
                                 setSite(json.id)
+                                setIsLoading(false)
                             })
-                            .catch(error => console.error(error));
+                            .catch(error => {
+                                setError(error)
+                                setIsLoading(false)
+                            });
                     })
-                    .catch(error => console.error(error));
+                    .catch(error => {
+                        setError(error)
+                        setIsLoading(false)
+                    });
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                setError(error)
+                setIsLoading(false)
+            });
     }
 
     async function fetchData() {
+        setIsLoading(true)
         await AsyncStorage.getItem('User')
             .then((u) => {
                 const user = JSON.parse(u);
@@ -113,7 +127,10 @@ export default function Billing() {
                                                     .then((json) => {
                                                         setFt(json.id.rate)
                                                     })
-                                                    .catch(error => console.error(error));
+                                                    .catch(error => {
+                                                        setError(error)
+                                                        setIsLoading(false)
+                                                    });
                                             });
                                         fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getmaxonpeak1/' + newDate2 + '/' + parseInt(site.idSite), {
                                             method: 'GET',
@@ -126,7 +143,10 @@ export default function Billing() {
                                             .then((json) => {
                                                 setMaxOnPeak1(json / 1000)
                                             })
-                                            .catch(error => setMaxOnPeak1(0));
+                                            .catch(error => {
+                                                setError(error)
+                                                setIsLoading(false)
+                                            });
                                         fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getmaxonpeak2/' + newDate2 + '/' + parseInt(site.idSite), {
                                             method: 'GET',
                                             headers: {
@@ -138,7 +158,10 @@ export default function Billing() {
                                             .then((json) => {
                                                 setMaxOnPeak2(json / 1000)
                                             })
-                                            .catch(error => setMaxOnPeak2(0));
+                                            .catch(error => {
+                                                setError(error)
+                                                setIsLoading(false)
+                                            });
                                         if (json.id.peatype === "1112" || json.id.peatype === "1122" || json.id.peatype === "2112" || json.id.peatype === "2122") {
                                             fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getsummonth/' + newDate2 + '/' + parseInt(site.idSite), {
                                                 method: 'GET',
@@ -150,8 +173,12 @@ export default function Billing() {
                                                 .then(response => response.json())
                                                 .then((json) => {
                                                     setSumMonth(json / 1000)
+                                                    setIsLoading(false)
                                                 })
-                                                .catch(error => setSumMonth(0));
+                                                .catch(error => {
+                                                    setError(error)
+                                                    setIsLoading(false)
+                                                });
                                         }
                                         else {
                                             fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getmaxoffpeak1/' + newDate2 + '/' + parseInt(site.idSite), {
@@ -165,7 +192,10 @@ export default function Billing() {
                                                 .then((json) => {
                                                     setMaxOffPeak1(json / 1000)
                                                 })
-                                                .catch(error => setMaxOffPeak1(0));
+                                                .catch(error => {
+                                                    setError(error)
+                                                    setIsLoading(false)
+                                                });
                                             fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getmaxoffpeak2/' + newDate2 + '/' + parseInt(site.idSite), {
                                                 method: 'GET',
                                                 headers: {
@@ -177,7 +207,10 @@ export default function Billing() {
                                                 .then((json) => {
                                                     setMaxOffPeak2(json / 1000)
                                                 })
-                                                .catch(error => setMaxOffPeak2(0));
+                                                .catch(error => {
+                                                    setError(error)
+                                                    setIsLoading(false)
+                                                });
                                             fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getsumonpeak/' + newDate2 + '/' + parseInt(site.idSite), {
                                                 method: 'GET',
                                                 headers: {
@@ -189,7 +222,10 @@ export default function Billing() {
                                                 .then((json) => {
                                                     setSumOnPeak(json / 1000)
                                                 })
-                                                .catch(error => setSumOnPeak(0));
+                                                .catch(error => {
+                                                    setError(error)
+                                                    setIsLoading(false)
+                                                });
                                             fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getsumoffpeak1/' + newDate2 + '/' + parseInt(site.idSite), {
                                                 method: 'GET',
                                                 headers: {
@@ -201,7 +237,10 @@ export default function Billing() {
                                                 .then((json) => {
                                                     setSumOffPeak1(json / 1000)
                                                 })
-                                                .catch(error => setSumOffPeak1(0));
+                                                .catch(error => {
+                                                    setError(error)
+                                                    setIsLoading(false)
+                                                });
                                             fetch('http://139.5.146.172:8080/api-1.0/api/tblenergymonitors/getsumoffpeak2/' + newDate2 + '/' + parseInt(site.idSite), {
                                                 method: 'GET',
                                                 headers: {
@@ -212,15 +251,28 @@ export default function Billing() {
                                                 .then(response => response.json())
                                                 .then((json) => {
                                                     setSumOffPeak2(json / 1000)
+                                                    setIsLoading(false)
                                                 })
-                                                .catch(error => setSumOffPeak2(0));
+                                                .catch(error => {
+                                                    setError(error)
+                                                    setIsLoading(false)
+                                                });
                                         }
                                     })
-                                    .catch(error => console.error(error));
+                                    .catch(error => {
+                                        setError(error)
+                                        setIsLoading(false)
+                                    });
                             })
-                            .catch(error => console.error(error));
+                            .catch(error => {
+                                setError(error)
+                                setIsLoading(false)
+                            });
                     })
-                    .catch(error => console.error(error));
+                    .catch(error => {
+                        setError(error)
+                        setIsLoading(false)
+                    });
             });
     }
 
@@ -305,6 +357,7 @@ export default function Billing() {
                     mode="monthYear"
                     selected={date}
                     current={date}
+                    maximumDate={formattedDate}
                     onMonthYearChange={selectedDate => {
                         setDate(selectedDate)
                         if (selectedDate !== date) {
@@ -329,323 +382,356 @@ export default function Billing() {
     };
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.container}>
-                <View style={styles.dataContainer}>
-                    <View style={styles.headContainer}>
-                        <Fontisto name="date" size={20} color="white" style={{ marginRight: 5, marginLeft: 5 }}/>
-                        <Text style={{ color: 'white', fontSize: 20 }}>Date{site !== null ? (
+            {!isLoading && error && error.message === 'Network request failed' ? (
+                <View style={styles.container}>
+                    <View style={styles.dataContainer}>
+                        <View style={styles.errorContainer}>
+                            <Text style={styles.textData}>Error</Text>
+                            <MaterialCommunityIcons name="access-point-network-off" size={100} color="#5800BB" />
+                            <Text style={styles.textData}>Network request failed</Text>
+                            <Text style={styles.textData}>The server is fail</Text>
+                            <Text style={styles.textData}>Please change URL or try again later</Text>
+                        </View>
+                    </View>
+                </View>
+            ) : !isLoading && error ? (
+                <View style={styles.container}>
+                    <View style={styles.dataContainer}>
+                        <View style={styles.errorContainer}>
+                            <Text style={styles.textData}>Error</Text>
+                            <MaterialIcons name="error" size={100} color="#5800BB" />
+                            <Text style={styles.textData}>Unknown error</Text>
+                            <Text style={styles.textData}>Please try again later</Text>
+                        </View>
+                    </View>
+                </View>
+            ) : !isLoading ? (
+                <ScrollView style={styles.container}>
+                    <View style={styles.dataContainer}>
+                        <View style={styles.headContainer}>
+                            <Fontisto name="date" size={20} color="white" style={{ marginRight: 5, marginLeft: 5 }} />
+                            <Text style={{ color: 'white', fontSize: 20 }}>Date{site !== null ? (
                                 <Text style={styles.textData}> ({site.sitename})</Text>
                             ) : (
                                 <ActivityIndicator />
                             )}</Text>
+                        </View>
+                        <TouchableOpacity style={styles.button} onPress={handleSelectDate}>
+                            <Text style={styles.buttonText}>Select Month ({displayDate})</Text>
+                        </TouchableOpacity>
+                        {!isHidden && (
+                            <MonthYearExample />
+                        )}
+                        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+                            <Text style={styles.buttonText}>Submit</Text>
+                        </TouchableOpacity>
+                        {billingType !== null && (billingType.peatype === "1112" || billingType.peatype === "1122"
+                            || billingType.peatype === "2112" || billingType.peatype === "2122") && billingDate !== null
+                            && (
+                                <View>
+                                    <Text style={styles.buttonText}>Billing of ({billingDate})</Text>
+                                    <Text style={styles.buttonText}>PEA type is {billingType.peatype}</Text>
+                                    <Text style={styles.buttonText}>{billingType.description}</Text>
+                                    <TouchableOpacity style={styles.header}>
+                                        <Text style={styles.rowText}>รายการ</Text>
+                                        <Text style={styles.rowText}>พลังงานไฟฟ้า(kWh)</Text>
+                                        <Text style={styles.rowText}>อัตราค่าพลังงานไฟฟ้า(Baht/kWh)</Text>
+                                        <Text style={styles.rowText}>ค่าพลังงานไฟฟ้ารวม(Baht)</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>หน่วยที่ 0 - 150</Text>
+                                        {sumMonth >= 150 ? (
+                                            <Text style={styles.rowText}>150</Text>
+                                        ) : (
+                                            <Text style={styles.rowText}>{(sumMonth).toFixed(3)}</Text>
+                                        )}
+                                        <Text style={styles.rowText}>{billingType.energy1}</Text>
+                                        {sumMonth >= 150 ? (
+                                            <Text style={styles.rowText}>{(150 * billingType.energy1).toFixed(2)}</Text>
+                                        ) : (
+                                            <Text style={styles.rowText}>{(sumMonth * billingType.energy1).toFixed(2)}</Text>
+                                        )}
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>หน่วยที่ 151 - 400</Text>
+                                        {sumMonth >= 400 ? (
+                                            <Text style={styles.rowText}>250</Text>
+                                        ) : sumMonth >= 151 ? (
+                                            <Text style={styles.rowText}>{(sumMonth).toFixed(3)}</Text>
+                                        ) : (
+                                            <Text style={styles.rowText}>0</Text>
+                                        )}
+                                        <Text style={styles.rowText}>{billingType.energy2}</Text>
+                                        {sumMonth >= 400 ? (
+                                            <Text style={styles.rowText}>{(250 * billingType.energy2).toFixed(2)}</Text>
+                                        ) : sumMonth >= 151 ? (
+                                            <Text style={styles.rowText}>{(sumMonth * billingType.energy2).toFixed(2)}</Text>
+                                        ) : (
+                                            <Text style={styles.rowText}>0</Text>
+                                        )}
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>หน่วยที่ 401 ขึ้นไป</Text>
+                                        {sumMonth >= 401 ? (
+                                            <Text style={styles.rowText}>{(sumMonth - 400).toFixed(3)}</Text>
+                                        ) : (
+                                            <Text style={styles.rowText}>0</Text>
+                                        )}
+                                        <Text style={styles.rowText}>{billingType.energy3}</Text>
+                                        {sumMonth >= 401 ? (
+                                            <Text style={styles.rowText}>{((sumMonth - 400) * billingType.energy3).toFixed(2)}</Text>
+                                        ) : (
+                                            <Text style={styles.rowText}>0</Text>
+                                        )}
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>รวมทั้งหมด</Text>
+                                        <Text style={styles.rowText}>{(sumMonth).toFixed(3)}</Text>
+                                        <Text style={styles.rowText}>-</Text>
+                                        <Text style={styles.rowText}>{calNormel().toFixed(2)}</Text>
+                                    </TouchableOpacity>
+                                    <Text style={{ color: 'white', fontSize: 15, alignSelf: 'center' }}>...</Text>
+                                    <TouchableOpacity style={styles.header}>
+                                        <Text style={styles.rowText}>ค่าพลังงานไฟฟ้ารวม</Text>
+                                        <Text style={styles.rowText}>{calNormel().toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>อัตราค่าปรับปรุงต้นทุนการผลิต (FT)</Text>
+                                        <Text style={styles.rowText}>{ft}</Text>
+                                        <Text style={styles.rowText}>บาท/กิโลวัตต์-ชั่วโมง</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ค่าปรับปรุงต้นทุนการผลิต (FT)</Text>
+                                        <Text style={styles.rowText}>{(sumMonth * ft).toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ค่ารีแอดทีฟเพาเวอร์สูงสุด (kVar)</Text>
+                                        <Text style={styles.rowText}>{(maxOnPeak2).toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>กิโลวาร์</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ค่าแอดทีฟเพาเวอร์สูงสุด (kW)</Text>
+                                        <Text style={styles.rowText}>{(maxOnPeak1).toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>กิโลวัตต์</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>รีแอดทีฟเพาเวอร์ส่วนที่เกิน</Text>
+                                        {maxOnPeak2 > (maxOnPeak1 * 0.61974) ? (
+                                            <Text style={styles.rowText}>{(maxOnPeak2 - (maxOnPeak1 * 0.61974)).toFixed(2)}</Text>
+                                        ) : (
+                                            <Text style={styles.rowText}>0</Text>
+                                        )}
+                                        <Text style={styles.rowText}>กิโลวาร์</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>อัตรา (PRPn)</Text>
+                                        <Text style={styles.rowText}>{billingType.kvarcharge}</Text>
+                                        <Text style={styles.rowText}>บาท/กิโลวาร์</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ค่าเพาเวอร์แฟตเตอร์ (RPn)</Text>
+                                        {maxOnPeak2 > (maxOnPeak1 * 0.61974) ? (
+                                            <Text style={styles.rowText}>{((maxOnPeak2 - (maxOnPeak1 * 0.61974)) * billingType.kvarcharge).toFixed(2)}</Text>
+                                        ) : (
+                                            <Text style={styles.rowText}>0</Text>
+                                        )}
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ค่าบริการ (SvC)</Text>
+                                        <Text style={styles.rowText}>{billingType.service}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>รวมเงินค่าไฟฟ้า</Text>
+                                        <Text style={styles.rowText}>{calNormel2().toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ส่วนลด</Text>
+                                        <Text style={styles.rowText}>0</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>รวมเงินค่าไฟฟ้าหลังหักส่วนลด</Text>
+                                        <Text style={styles.rowText}>{calNormel2().toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ค่าภาษีมูลค่าเพิ่ม 7% (VAT)</Text>
+                                        <Text style={styles.rowText}>{(calNormel2() * 7 / 100).toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.tail}>
+                                        <Text style={styles.rowText}>รวมเป็นเงินทั้งสิ้น</Text>
+                                        <Text style={styles.rowText}>{(calNormel2() + (calNormel2() * 7 / 100)).toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <Text></Text>
+                                </View>
+                            )}
+                        {billingType !== null && (billingType.peatype !== "1112" && billingType.peatype !== "1122"
+                            && billingType.peatype !== "2112" && billingType.peatype !== "2122") && billingDate !== null
+                            && (
+                                <View>
+                                    <Text style={styles.buttonText}>Billing of ({billingDate})</Text>
+                                    <Text style={styles.buttonText}>PEA type is {billingType.peatype}</Text>
+                                    <Text style={styles.buttonText}>{billingType.description}</Text>
+                                    <TouchableOpacity style={styles.header}>
+                                        <Text style={styles.rowText}>รายการ kWDemand</Text>
+                                        <Text style={styles.rowText}>ค่าความต้องการสูงสุด (kW)</Text>
+                                        <Text style={styles.rowText}>อัตราค่าความต้องการ (Baht/kW/Month)</Text>
+                                        <Text style={styles.rowText}>ค่าความต้องการ (Bath)</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>OnPeak (9.00-22.00) จ-ศ</Text>
+                                        <Text style={styles.rowText}>{(maxOnPeak1).toFixed(3)}</Text>
+                                        <Text style={styles.rowText}>{billingType.onpeakdemand}</Text>
+                                        <Text style={styles.rowText}>{(maxOnPeak1 * billingType.onpeakdemand).toFixed(2)}</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>OffPeak1 (22.00-9.00) จ-ศ</Text>
+                                        <Text style={styles.rowText}>{(maxOffPeak1).toFixed(3)}</Text>
+                                        <Text style={styles.rowText}>0</Text>
+                                        <Text style={styles.rowText}>0</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>OffPeak2 ตลอดวัน ส-อา วันหยุด</Text>
+                                        <Text style={styles.rowText}>{(maxOffPeak2).toFixed(3)}</Text>
+                                        <Text style={styles.rowText}>0</Text>
+                                        <Text style={styles.rowText}>0</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>รวมค่าความต้องการสูงสุด</Text>
+                                        <Text style={styles.rowText}>-</Text>
+                                        <Text style={styles.rowText}>-</Text>
+                                        <Text style={styles.rowText}>{(maxOnPeak1 * billingType.onpeakdemand).toFixed(2)}</Text>
+                                    </TouchableOpacity>
+                                    <Text style={{ color: 'white', fontSize: 15, alignSelf: 'center' }}>...</Text>
+                                    <TouchableOpacity style={styles.header}>
+                                        <Text style={styles.rowText}>รายการ kWh</Text>
+                                        <Text style={styles.rowText}>พลังงานไฟฟ้า (kWh)</Text>
+                                        <Text style={styles.rowText}>อัตราค่าพลังงานไฟฟ้า (Baht/kWh)</Text>
+                                        <Text style={styles.rowText}>ค่าพลังงานไฟฟ้ารวม (Baht)</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>OnPeak (9.00-22.00) จ-ศ</Text>
+                                        <Text style={styles.rowText}>{(sumOnPeak).toFixed(3)}</Text>
+                                        <Text style={styles.rowText}>{billingType.energyonpeak}</Text>
+                                        <Text style={styles.rowText}>{(sumOnPeak * billingType.energyonpeak).toFixed(2)}</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>OffPeak1 (22.00-9.00) จ-ศ</Text>
+                                        <Text style={styles.rowText}>{(sumOffPeak1).toFixed(3)}</Text>
+                                        <Text style={styles.rowText}>{billingType.energyoffpeak}</Text>
+                                        <Text style={styles.rowText}>{(sumOffPeak1 * billingType.energyoffpeak).toFixed(2)}</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>OffPeak2 ตลอดวัน ส-อา วันหยุด</Text>
+                                        <Text style={styles.rowText}>{(sumOffPeak2).toFixed(3)}</Text>
+                                        <Text style={styles.rowText}>{billingType.energyoffpeak}</Text>
+                                        <Text style={styles.rowText}>{(sumOffPeak2 * billingType.energyoffpeak).toFixed(2)}</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>รวมค่าพลังงานสูงสุด</Text>
+                                        <Text style={styles.rowText}>-</Text>
+                                        <Text style={styles.rowText}>-</Text>
+                                        <Text style={styles.rowText}>{((sumOnPeak * billingType.energyonpeak) + (sumOffPeak1 * billingType.energyoffpeak) + (sumOffPeak2 * billingType.energyoffpeak)).toFixed(2)}</Text>
+                                    </TouchableOpacity>
+                                    <Text style={{ color: 'white', fontSize: 15, alignSelf: 'center' }}>...</Text>
+                                    <TouchableOpacity style={styles.header}>
+                                        <Text style={styles.rowText}>ค่าพลังงานและความต้องการพลังงานไฟฟ้า</Text>
+                                        <Text style={styles.rowText}>{calTOU().toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>อัตราค่าปรับปรุงต้นทุนการผลิต (FT)</Text>
+                                        <Text style={styles.rowText}>{ft}</Text>
+                                        <Text style={styles.rowText}>บาท/กิโลวัตต์-ชั่วโมง</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ค่าปรับปรุงต้นทุนการผลิต (FT)</Text>
+                                        <Text style={styles.rowText}>{((sumOnPeak + sumOffPeak1 + sumOffPeak2) * ft).toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ค่ารีแอดทีฟเพาเวอร์สูงสุด (kVar)</Text>
+                                        <Text style={styles.rowText}>{(maxOnPeak2).toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>กิโลวาร์</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ค่าแอดทีฟเพาเวอร์สูงสุด (kW)</Text>
+                                        <Text style={styles.rowText}>{(maxOnPeak1).toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>กิโลวัตต์</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>รีแอดทีฟเพาเวอร์ส่วนที่เกิน</Text>
+                                        {maxOnPeak2 > (maxOnPeak1 * 0.61974) ? (
+                                            <Text style={styles.rowText}>{(maxOnPeak2 - (maxOnPeak1 * 0.61974)).toFixed(2)}</Text>
+                                        ) : (
+                                            <Text style={styles.rowText}>0</Text>
+                                        )}
+                                        <Text style={styles.rowText}>กิโลวาร์</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>อัตรา (PRPn)</Text>
+                                        <Text style={styles.rowText}>{billingType.kvarcharge}</Text>
+                                        <Text style={styles.rowText}>บาท/กิโลวาร์</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ค่าเพาเวอร์แฟตเตอร์ (RPn)</Text>
+                                        {maxOnPeak2 > (maxOnPeak1 * 0.61974) ? (
+                                            <Text style={styles.rowText}>{((maxOnPeak2 - (maxOnPeak1 * 0.61974)) * billingType.kvarcharge).toFixed(2)}</Text>
+                                        ) : (
+                                            <Text style={styles.rowText}>0</Text>
+                                        )}
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ค่าบริการ (SvC)</Text>
+                                        <Text style={styles.rowText}>{billingType.service}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>รวมเงินค่าไฟฟ้า</Text>
+                                        <Text style={styles.rowText}>{calTOU2().toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ส่วนลด</Text>
+                                        <Text style={styles.rowText}>0</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>รวมเงินค่าไฟฟ้าหลังหักส่วนลด</Text>
+                                        <Text style={styles.rowText}>{calTOU2().toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.row}>
+                                        <Text style={styles.rowText}>ค่าภาษีมูลค่าเพิ่ม 7% (VAT)</Text>
+                                        <Text style={styles.rowText}>{(calTOU2() * 7 / 100).toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.tail}>
+                                        <Text style={styles.rowText}>รวมเป็นเงินทั้งสิ้น</Text>
+                                        <Text style={styles.rowText}>{(calTOU2() + (calTOU2() * 7 / 100)).toFixed(2)}</Text>
+                                        <Text style={styles.rowText}>บาท</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            )}
                     </View>
-                    <TouchableOpacity style={styles.button} onPress={handleSelectDate}>
-                        <Text style={styles.buttonText}>Select Month ({displayDate})</Text>
-                    </TouchableOpacity>
-                    {!isHidden && (
-                        <MonthYearExample />
-                    )}
-                    <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                        <Text style={styles.buttonText}>Submit</Text>
-                    </TouchableOpacity>
-                    {billingType !== null && (billingType.peatype === "1112" || billingType.peatype === "1122"
-                        || billingType.peatype === "2112" || billingType.peatype === "2122") && billingDate !== null
-                        && (
-                            <View>
-                                <Text style={styles.buttonText}>Billing of ({billingDate})</Text>
-                                <Text style={styles.buttonText}>PEA type is {billingType.peatype}</Text>
-                                <Text style={styles.buttonText}>{billingType.description}</Text>
-                                <TouchableOpacity style={styles.header}>
-                                    <Text style={styles.rowText}>รายการ</Text>
-                                    <Text style={styles.rowText}>พลังงานไฟฟ้า(kWh)</Text>
-                                    <Text style={styles.rowText}>อัตราค่าพลังงานไฟฟ้า(Baht/kWh)</Text>
-                                    <Text style={styles.rowText}>ค่าพลังงานไฟฟ้ารวม(Baht)</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>หน่วยที่ 0 - 150</Text>
-                                    {sumMonth >= 150 ? (
-                                        <Text style={styles.rowText}>150</Text>
-                                    ) : (
-                                        <Text style={styles.rowText}>{(sumMonth).toFixed(3)}</Text>
-                                    )}
-                                    <Text style={styles.rowText}>{billingType.energy1}</Text>
-                                    {sumMonth >= 150 ? (
-                                        <Text style={styles.rowText}>{(150 * billingType.energy1).toFixed(2)}</Text>
-                                    ) : (
-                                        <Text style={styles.rowText}>{(sumMonth * billingType.energy1).toFixed(2)}</Text>
-                                    )}
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>หน่วยที่ 151 - 400</Text>
-                                    {sumMonth >= 400 ? (
-                                        <Text style={styles.rowText}>250</Text>
-                                    ) : sumMonth >= 151 ? (
-                                        <Text style={styles.rowText}>{(sumMonth).toFixed(3)}</Text>
-                                    ) : (
-                                        <Text style={styles.rowText}>0</Text>
-                                    )}
-                                    <Text style={styles.rowText}>{billingType.energy2}</Text>
-                                    {sumMonth >= 400 ? (
-                                        <Text style={styles.rowText}>{(250 * billingType.energy2).toFixed(2)}</Text>
-                                    ) : sumMonth >= 151 ? (
-                                        <Text style={styles.rowText}>{(sumMonth * billingType.energy2).toFixed(2)}</Text>
-                                    ) : (
-                                        <Text style={styles.rowText}>0</Text>
-                                    )}
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>หน่วยที่ 401 ขึ้นไป</Text>
-                                    {sumMonth >= 401 ? (
-                                        <Text style={styles.rowText}>{(sumMonth - 400).toFixed(3)}</Text>
-                                    ) : (
-                                        <Text style={styles.rowText}>0</Text>
-                                    )}
-                                    <Text style={styles.rowText}>{billingType.energy3}</Text>
-                                    {sumMonth >= 401 ? (
-                                        <Text style={styles.rowText}>{((sumMonth - 400) * billingType.energy3).toFixed(2)}</Text>
-                                    ) : (
-                                        <Text style={styles.rowText}>0</Text>
-                                    )}
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>รวมทั้งหมด</Text>
-                                    <Text style={styles.rowText}>{(sumMonth).toFixed(3)}</Text>
-                                    <Text style={styles.rowText}>-</Text>
-                                    <Text style={styles.rowText}>{calNormel().toFixed(2)}</Text>
-                                </TouchableOpacity>
-                                <Text style={{ color: 'white', fontSize: 15, alignSelf: 'center' }}>...</Text>
-                                <TouchableOpacity style={styles.header}>
-                                    <Text style={styles.rowText}>ค่าพลังงานไฟฟ้ารวม</Text>
-                                    <Text style={styles.rowText}>{calNormel().toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>อัตราค่าปรับปรุงต้นทุนการผลิต (FT)</Text>
-                                    <Text style={styles.rowText}>{ft}</Text>
-                                    <Text style={styles.rowText}>บาท/กิโลวัตต์-ชั่วโมง</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ค่าปรับปรุงต้นทุนการผลิต (FT)</Text>
-                                    <Text style={styles.rowText}>{(sumMonth * ft).toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ค่ารีแอดทีฟเพาเวอร์สูงสุด (kVar)</Text>
-                                    <Text style={styles.rowText}>{(maxOnPeak2).toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>กิโลวาร์</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ค่าแอดทีฟเพาเวอร์สูงสุด (kW)</Text>
-                                    <Text style={styles.rowText}>{(maxOnPeak1).toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>กิโลวัตต์</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>รีแอดทีฟเพาเวอร์ส่วนที่เกิน</Text>
-                                    {maxOnPeak2 > (maxOnPeak1 * 0.61974) ? (
-                                        <Text style={styles.rowText}>{(maxOnPeak2 - (maxOnPeak1 * 0.61974)).toFixed(2)}</Text>
-                                    ) : (
-                                        <Text style={styles.rowText}>0</Text>
-                                    )}
-                                    <Text style={styles.rowText}>กิโลวาร์</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>อัตรา (PRPn)</Text>
-                                    <Text style={styles.rowText}>{billingType.kvarcharge}</Text>
-                                    <Text style={styles.rowText}>บาท/กิโลวาร์</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ค่าเพาเวอร์แฟตเตอร์ (RPn)</Text>
-                                    {maxOnPeak2 > (maxOnPeak1 * 0.61974) ? (
-                                        <Text style={styles.rowText}>{((maxOnPeak2 - (maxOnPeak1 * 0.61974)) * billingType.kvarcharge).toFixed(2)}</Text>
-                                    ) : (
-                                        <Text style={styles.rowText}>0</Text>
-                                    )}
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ค่าบริการ (SvC)</Text>
-                                    <Text style={styles.rowText}>{billingType.service}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>รวมเงินค่าไฟฟ้า</Text>
-                                    <Text style={styles.rowText}>{calNormel2().toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ส่วนลด</Text>
-                                    <Text style={styles.rowText}>0</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>รวมเงินค่าไฟฟ้าหลังหักส่วนลด</Text>
-                                    <Text style={styles.rowText}>{calNormel2().toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ค่าภาษีมูลค่าเพิ่ม 7% (VAT)</Text>
-                                    <Text style={styles.rowText}>{(calNormel2() * 7 / 100).toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.tail}>
-                                    <Text style={styles.rowText}>รวมเป็นเงินทั้งสิ้น</Text>
-                                    <Text style={styles.rowText}>{(calNormel2() + (calNormel2() * 7 / 100)).toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <Text></Text>
-                            </View>
-                        )}
-                    {billingType !== null && (billingType.peatype !== "1112" && billingType.peatype !== "1122"
-                        && billingType.peatype !== "2112" && billingType.peatype !== "2122") && billingDate !== null
-                        && (
-                            <View>
-                                <Text style={styles.buttonText}>Billing of ({billingDate})</Text>
-                                <Text style={styles.buttonText}>PEA type is {billingType.peatype}</Text>
-                                <Text style={styles.buttonText}>{billingType.description}</Text>
-                                <TouchableOpacity style={styles.header}>
-                                    <Text style={styles.rowText}>รายการ kWDemand</Text>
-                                    <Text style={styles.rowText}>ค่าความต้องการสูงสุด (kW)</Text>
-                                    <Text style={styles.rowText}>อัตราค่าความต้องการ (Baht/kW/Month)</Text>
-                                    <Text style={styles.rowText}>ค่าความต้องการ (Bath)</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>OnPeak (9.00-22.00) จ-ศ</Text>
-                                    <Text style={styles.rowText}>{(maxOnPeak1).toFixed(3)}</Text>
-                                    <Text style={styles.rowText}>{billingType.onpeakdemand}</Text>
-                                    <Text style={styles.rowText}>{(maxOnPeak1 * billingType.onpeakdemand).toFixed(2)}</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>OffPeak1 (22.00-9.00) จ-ศ</Text>
-                                    <Text style={styles.rowText}>{(maxOffPeak1).toFixed(3)}</Text>
-                                    <Text style={styles.rowText}>0</Text>
-                                    <Text style={styles.rowText}>0</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>OffPeak2 ตลอดวัน ส-อา วันหยุด</Text>
-                                    <Text style={styles.rowText}>{(maxOffPeak2).toFixed(3)}</Text>
-                                    <Text style={styles.rowText}>0</Text>
-                                    <Text style={styles.rowText}>0</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>รวมค่าความต้องการสูงสุด</Text>
-                                    <Text style={styles.rowText}>-</Text>
-                                    <Text style={styles.rowText}>-</Text>
-                                    <Text style={styles.rowText}>{(maxOnPeak1 * billingType.onpeakdemand).toFixed(2)}</Text>
-                                </TouchableOpacity>
-                                <Text style={{ color: 'white', fontSize: 15, alignSelf: 'center' }}>...</Text>
-                                <TouchableOpacity style={styles.header}>
-                                    <Text style={styles.rowText}>รายการ kWh</Text>
-                                    <Text style={styles.rowText}>พลังงานไฟฟ้า (kWh)</Text>
-                                    <Text style={styles.rowText}>อัตราค่าพลังงานไฟฟ้า (Baht/kWh)</Text>
-                                    <Text style={styles.rowText}>ค่าพลังงานไฟฟ้ารวม (Baht)</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>OnPeak (9.00-22.00) จ-ศ</Text>
-                                    <Text style={styles.rowText}>{(sumOnPeak).toFixed(3)}</Text>
-                                    <Text style={styles.rowText}>{billingType.energyonpeak}</Text>
-                                    <Text style={styles.rowText}>{(sumOnPeak * billingType.energyonpeak).toFixed(2)}</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>OffPeak1 (22.00-9.00) จ-ศ</Text>
-                                    <Text style={styles.rowText}>{(sumOffPeak1).toFixed(3)}</Text>
-                                    <Text style={styles.rowText}>{billingType.energyoffpeak}</Text>
-                                    <Text style={styles.rowText}>{(sumOffPeak1 * billingType.energyoffpeak).toFixed(2)}</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>OffPeak2 ตลอดวัน ส-อา วันหยุด</Text>
-                                    <Text style={styles.rowText}>{(sumOffPeak2).toFixed(3)}</Text>
-                                    <Text style={styles.rowText}>{billingType.energyoffpeak}</Text>
-                                    <Text style={styles.rowText}>{(sumOffPeak2 * billingType.energyoffpeak).toFixed(2)}</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>รวมค่าพลังงานสูงสุด</Text>
-                                    <Text style={styles.rowText}>-</Text>
-                                    <Text style={styles.rowText}>-</Text>
-                                    <Text style={styles.rowText}>{((sumOnPeak * billingType.energyonpeak) + (sumOffPeak1 * billingType.energyoffpeak) + (sumOffPeak2 * billingType.energyoffpeak)).toFixed(2)}</Text>
-                                </TouchableOpacity>
-                                <Text style={{ color: 'white', fontSize: 15, alignSelf: 'center' }}>...</Text>
-                                <TouchableOpacity style={styles.header}>
-                                    <Text style={styles.rowText}>ค่าพลังงานและความต้องการพลังงานไฟฟ้า</Text>
-                                    <Text style={styles.rowText}>{calTOU().toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>อัตราค่าปรับปรุงต้นทุนการผลิต (FT)</Text>
-                                    <Text style={styles.rowText}>{ft}</Text>
-                                    <Text style={styles.rowText}>บาท/กิโลวัตต์-ชั่วโมง</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ค่าปรับปรุงต้นทุนการผลิต (FT)</Text>
-                                    <Text style={styles.rowText}>{((sumOnPeak + sumOffPeak1 + sumOffPeak2) * ft).toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ค่ารีแอดทีฟเพาเวอร์สูงสุด (kVar)</Text>
-                                    <Text style={styles.rowText}>{(maxOnPeak2).toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>กิโลวาร์</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ค่าแอดทีฟเพาเวอร์สูงสุด (kW)</Text>
-                                    <Text style={styles.rowText}>{(maxOnPeak1).toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>กิโลวัตต์</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>รีแอดทีฟเพาเวอร์ส่วนที่เกิน</Text>
-                                    {maxOnPeak2 > (maxOnPeak1 * 0.61974) ? (
-                                        <Text style={styles.rowText}>{(maxOnPeak2 - (maxOnPeak1 * 0.61974)).toFixed(2)}</Text>
-                                    ) : (
-                                        <Text style={styles.rowText}>0</Text>
-                                    )}
-                                    <Text style={styles.rowText}>กิโลวาร์</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>อัตรา (PRPn)</Text>
-                                    <Text style={styles.rowText}>{billingType.kvarcharge}</Text>
-                                    <Text style={styles.rowText}>บาท/กิโลวาร์</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ค่าเพาเวอร์แฟตเตอร์ (RPn)</Text>
-                                    {maxOnPeak2 > (maxOnPeak1 * 0.61974) ? (
-                                        <Text style={styles.rowText}>{((maxOnPeak2 - (maxOnPeak1 * 0.61974)) * billingType.kvarcharge).toFixed(2)}</Text>
-                                    ) : (
-                                        <Text style={styles.rowText}>0</Text>
-                                    )}
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ค่าบริการ (SvC)</Text>
-                                    <Text style={styles.rowText}>{billingType.service}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>รวมเงินค่าไฟฟ้า</Text>
-                                    <Text style={styles.rowText}>{calTOU2().toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ส่วนลด</Text>
-                                    <Text style={styles.rowText}>0</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>รวมเงินค่าไฟฟ้าหลังหักส่วนลด</Text>
-                                    <Text style={styles.rowText}>{calTOU2().toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.row}>
-                                    <Text style={styles.rowText}>ค่าภาษีมูลค่าเพิ่ม 7% (VAT)</Text>
-                                    <Text style={styles.rowText}>{(calTOU2() * 7 / 100).toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={styles.tail}>
-                                    <Text style={styles.rowText}>รวมเป็นเงินทั้งสิ้น</Text>
-                                    <Text style={styles.rowText}>{(calTOU2() + (calTOU2() * 7 / 100)).toFixed(2)}</Text>
-                                    <Text style={styles.rowText}>บาท</Text>
-                                </TouchableOpacity>
-                            </View>
-                        )}
+                </ScrollView>
+            ) : (
+                <View style={styles.container}>
+                    <View style={styles.dataContainer}>
+                        <View style={styles.errorContainer}>
+                            <ActivityIndicator size="large" color="#5800BB" />
+                        </View>
+                    </View>
                 </View>
-            </ScrollView>
+            )}
         </SafeAreaView>
     );
 }
@@ -683,6 +769,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         alignSelf: 'center'
+    },
+    errorContainer: {
+        flex: 1,
+        width: '100%',
+        borderRadius: 8,
+        marginTop: 2,
+        alignItems: 'center',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        backgroundColor: "#E5E5E5"
     },
     picker: {
         width: 200,
